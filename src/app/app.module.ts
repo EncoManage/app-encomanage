@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -21,7 +21,8 @@ import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    HacerPedidoModule
+    HacerPedidoModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()

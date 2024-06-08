@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-hacer-pedido',
   templateUrl: './hacer-pedido.component.html',
@@ -8,3 +10,4 @@ import { Component } from '@angular/core';
 export class HacerPedidoComponent {
 
 }
+
