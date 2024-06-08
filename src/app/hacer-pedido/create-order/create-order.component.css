@@ -1,5 +1,5 @@
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -34,6 +34,7 @@ body {
 
 .Izquierda h1, .Derecha h1, .Derecha h2 {
     margin: 10px 0;
+
 }
 
 .Direcciones {
@@ -44,15 +45,15 @@ body {
     margin-bottom: 15px;
 }
 
- .button-Envio-Express, .button-Mapa-Interactivo, .button-Crear-Pedido {
+ .button-Seleccionar-Encomienda,.button-Envio-Express, .button-Mapa-Interactivo {
     display: block;
     padding: 20px;
     margin: 50px 0;
     text-align: center;
-    background-color: #E8E0D7;
+    background-color: #FFD5A5;
     color: #FFF9F2;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 32px;
     font-weight: bold;
     width: 582px;
@@ -60,25 +61,26 @@ body {
     align-content: center;
 }
 
-.button-Seleccionar-Encomienda{
+.button-Crear-Pedido{
     display: block;
     padding: 20px;
     margin: 10px 0;
     text-align: center;
-    background-color: #FFD5A5;
+    background-color:#E8E0D7;
     color: #FFF9F2;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 32px;
     font-weight: bold;
     width: 582px;
     height: 48px;
+    align-content: center;
 }
 
 
-/* .button-Seleccionar-Encomienda:hover, .button-Envio-Express:hover, .button-Mapa-Interactivo:hover, .button-Crear-Pedido:hover {
-    background-color: #0056b3;
-} */
+.button-Seleccionar-Encomienda:hover, .button-Envio-Express:hover, .button-Mapa-Interactivo:hover{
+    background-color: #FBB768;
+}
 
 .Botones-Derecha {
     margin-top: 30px;
@@ -86,13 +88,13 @@ body {
 
 .Direcciones h1{
     color: #1E3A8A;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 32px;
 }
 
 .Derecha h1{
     color: #1E3A8A;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 32px;
     font-style: italic;
     width: 70%;
@@ -103,7 +105,7 @@ body {
 
 .Derecha h2{
     color:#FFF9F2;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 32px;
     width: 70%;
     text-align: center;
@@ -111,3 +113,20 @@ body {
 }
 
 
+.Title h1{
+    color: #1E3A8A;
+    font-size: 64px;
+    font-weight: 900;
+}
+
+.Direcciones input {
+    width: 582px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #FFD5A5;
+    border-radius: 15px;
+    font-size: 1em;
+    color: #FFD5A5;
+    font-size: 32px;
+  }
