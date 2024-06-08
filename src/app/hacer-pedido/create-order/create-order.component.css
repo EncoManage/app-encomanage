@@ -1,0 +1,113 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F6A13C;
+}
+
+.Crear-Pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    background-color: #F6A13C;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.Crear-Pedido-Content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Izquierda, .Derecha {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.Izquierda h1, .Derecha h1, .Derecha h2 {
+    margin: 10px 0;
+}
+
+.Direcciones {
+    margin: 20px 0;
+}
+
+.Direccion-Recogida, .Direccion-Entrega {
+    margin-bottom: 15px;
+}
+
+ .button-Envio-Express, .button-Mapa-Interactivo, .button-Crear-Pedido {
+    display: block;
+    padding: 20px;
+    margin: 50px 0;
+    text-align: center;
+    background-color: #E8E0D7;
+    color: #FFF9F2;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    width: 582px;
+    height: 48px;
+    align-content: center;
+}
+
+.button-Seleccionar-Encomienda{
+    display: block;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #FFD5A5;
+    color: #FFF9F2;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    width: 582px;
+    height: 48px;
+}
+
+
+/* .button-Seleccionar-Encomienda:hover, .button-Envio-Express:hover, .button-Mapa-Interactivo:hover, .button-Crear-Pedido:hover {
+    background-color: #0056b3;
+} */
+
+.Botones-Derecha {
+    margin-top: 30px;
+}
+
+.Direcciones h1{
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.Derecha h1{
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 32px;
+    font-style: italic;
+    width: 70%;
+    text-align: center;
+    align-self: center;
+
+}
+
+.Derecha h2{
+    color:#FFF9F2;
+    font-weight: bold;
+    font-size: 32px;
+    width: 70%;
+    text-align: center;
+    align-self: center;
+}
+
+
