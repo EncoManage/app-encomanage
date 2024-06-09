@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { HacerPedidoRoutingModule } from './hacer-pedido-routing.module';
 import { HacerPedidoComponent } from './hacer-pedido.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
+import { SeleccionarEncomiendaComponent } from './seleccionar-encomienda/seleccionar-encomienda.component';
 
 
 @NgModule({
   declarations: [
     HacerPedidoComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    SeleccionarEncomiendaComponent
   ],
   imports: [
     CommonModule,

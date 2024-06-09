@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #F6A13C;
+}
+
+.Seleccionar-Tipo-Encomienda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    width: 1440px;
+    /* max-width: 1200px; */
+    background-color: #F6A13C;
+}
+
+.Title {
+    align-self: flex-start;
+}
+
+.Title h1 {
+    color: #1E3A8A;
+    font-size: 64px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    width: 70%;
+}
+
+.Tipo-Encomiendas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.encomienda-card {
+    background-color: #FFD5A5;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #1E3A8A;
+    width: 582px;
+    height: 212px;
+    cursor: pointer; /* Cambia el cursor a pointer */
+    user-select: none; /* Desactiva la selección de texto */
+}
+
+.encomienda-card h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight:700;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.encomienda-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #131313;
+    text-align: justify;
+}
+
+.encomienda-card:hover{
+    background-color: #FBB768;
+}
+
+.Mudanza {
+    grid-column: 1 / span 1;
+}
+
+.Botones-Inferiores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    /* max-width: 600px; */
+    /* margin-top: 20px; */
+}
+
+.button-Instrucciones-Entrega {
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    background-color: #FFD5A5;
+    color: #FFF9F2;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    width: 500px;
+    height: 40px;
+    align-content: center;
+}
+
+.button-Confirmar{
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    background-color: #E8E0D7;
+    color: #FFF9F2;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    width: 500px;
+    height: 40px;
+    align-content: center;
+}
+
+.button-Instrucciones-Entrega:hover{
+    background-color: #FBB768;
+}
+
+/* .button-Confirmar:hover{
+    background-color: #FBB768;
+} */

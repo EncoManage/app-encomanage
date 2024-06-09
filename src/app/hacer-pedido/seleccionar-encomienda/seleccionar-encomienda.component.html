@@ -1,0 +1,34 @@
+<body>
+    <div class="Seleccionar-Tipo-Encomienda">
+        <div class="Title">
+            <h1>Seleccionar Tipo de Encomienda</h1>
+        </div>
+        <div class="Tipo-Encomiendas">
+            <div class="Encomienda-Comida encomienda-card" (click)="selectEncomienda('Encomienda de comida')">
+                <h1>Encomienda de comida</h1>
+                <p>¿Quieres enviar alimentos frescos y productos esenciales a tus seres queridos? 
+                    Con nuestra función de encomienda de comida nos aseguraremos que tus productos lleguen 
+                    frescos y en perfecto estado. Haz que su día sea un poco más especial enviándoles 
+                    alimentos de calidad directamente a su puerta</p>
+            </div>
+            <div class="Encomienda-Regular encomienda-card"  (click)="selectEncomienda('Encomienda regular')">
+                <h1>Encomienda regular</h1>
+                <p>¿Necesitas enviar un paquete a un ser querido o cliente? Nuestra función de encomienda 
+                    regular te permite hacerlo de manera rápida y confiable. Ya sea que estés enviando un regalo
+                     de cumpleaños a un amigo o un producto a un cliente, nuestra función de encomienda regular garantiza
+                      que tu paquete llegue de manera segura y puntual a su destino final.</p>
+            </div>
+            <div class="Mudanza encomienda-card" (click)="selectEncomienda('Mudanza')">
+                <h1>Mudanza</h1>
+                <p>¿Estás listo para mudarte a tu nuevo hogar? Nuestra función de mudanza te hace el proceso más fácil 
+                    que nunca. Nuestro equipo de expertos en logística se encargará de todo el proceso, desde la carga
+                     hasta la entrega en tu nuevo hogar.</p>
+            </div>
+        </div>
+        <div class="Botones-Inferiores">
+        <a href="javascript:void(0)" class="button-Instrucciones-Entrega">Instrucciones de Entrega</a>
+        <a href="javascript:void(0)" class="button-Confirmar">Confirmar</a>
+    </div>
+    </div>
+</body>
+
