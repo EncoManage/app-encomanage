@@ -29,4 +29,7 @@ export class CreateOrderComponent {
   onSubmitOrder(): void{
     console.log('Pedido creado: ', this.order);
   }
+  onInstruccionesEntrega() {
+    this.router.navigate(['/hacer-pedido/instrucciones-entrega']);
+  }
 }
