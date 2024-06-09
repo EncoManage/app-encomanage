@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OrderRequest } from '../model/order-request.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-order',
@@ -13,8 +14,11 @@ export class CreateOrderComponent {
     express_shipping: false
   };
 
+  constructor(private router: Router) {}
+
   onSelectEncomienda():void{
     console.log('Seleccionar Tipo de Encomienda clicado');
+    this.router.navigate(['/hacer-pedido/seleccionar-encomienda']);
   }
 
   onToggleExpressShipping(): void{
