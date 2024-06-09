@@ -1,0 +1,73 @@
+body{
+    background-color:#F6A13C;
+}
+.Instrucciones-Entrega {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background-color: #F6A13C;
+    border-radius: 10px;
+    width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.Instrucciones-Entrega h1 {
+    font-size: 64px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #1E3A8A;
+    font-weight: 900;
+}
+
+.Instrucciones-Entrega p {
+    color: #1E3A8A;
+    font-size: 32px;
+    font-weight: bold;
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    line-height: normal;
+}
+
+.Instrucciones-Entrega .textarea-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1322px;
+}
+
+.Instrucciones-Entrega textarea {
+    width: 100%;
+    height: 182px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #FFD5A5;
+    font-size: 16px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.Instrucciones-Entrega .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1322px;
+}
+
+.Instrucciones-Entrega button {
+    width: 500px;
+    padding: 10px;
+    background-color: #FFD5A5;
+    color: #FFF9F2;
+    border: none;
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.Instrucciones-Entrega button:hover {
+    background-color: #FBB768;
+}
