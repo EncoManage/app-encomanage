@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="left-side">
+        <img src="..\assets\parcelapp.png" alt="Ilustración">
+    </div>
+    <div class="right-side">
+        <h1>Registro</h1>
+        <p>Le enviamos un código de verificación a su correo para mayor seguridad</p>
+        <form class="verification-form" [formGroup]="form" (ngSubmit)="verfication()">
+            <mat-form-field class="custom-form-field" appearance="outline">
+              <mat-label>Código</mat-label>
+              <input matInput type="text" placeholder="Ingrese su código" formControlName="codigo">
+              <mat-error *ngIf="controlHasError('codigo', 'required')">Este campo es obligatorio</mat-error>
+              <mat-error *ngIf="controlHasError('codigo', 'minlength')">Debe tener al menos 4 caracteres</mat-error>
+              <mat-error *ngIf="controlHasError('codigo', 'onlyNumbers')">Solo se permiten números</mat-error>
+            </mat-form-field>
+            <button class="verification-button" mat-raised-button color="primary" [disabled]="!form.valid">
+              Verificar
+            </button>
+          </form>
+    </div>
+</div>

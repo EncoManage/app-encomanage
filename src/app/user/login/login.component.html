@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="left-side">
+      <img src="..\assets\parcelapp.png" alt="Ilustración">
+    </div>
+    <div class="right-side">
+      <h1>Inicio de sesión</h1>
+      <p>¡Inicia sesión para hacer envíos y hacerles un seguimiento!</p>
+      <form class="login-form" autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
+        <mat-form-field class="custom-form-field" appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+          <input matInput type="email" placeholder="Eje: abc@ejemplo.com" formControlName="email" required>
+          <mat-error *ngIf="controlHasError('email', 'required')">
+            Este campo es obligatorio
+          </mat-error>
+          <mat-error *ngIf="controlHasError('email', 'pattern')">
+            Ingrese un email válido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom-form-field" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput [type]="passwordVisible ? 'text' : 'password'" placeholder="********" formControlName="password" required>
+          <mat-icon matSuffix (click)="passwordVisible = !passwordVisible">
+            {{ passwordVisible ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+          <mat-error *ngIf="controlHasError('password', 'required')">
+            Este campo es obligatorio
+          </mat-error>
+          <mat-error *ngIf="controlHasError('password', 'minlength')">
+            Ingrese una contraseña de al menos 4 caracteres.
+          </mat-error>
+        </mat-form-field>
+        <p><a routerLink="/password">¿Olvidaste tu contraseña?</a></p>
+        <button class="login-button" mat-raised-button color="primary" [disabled]="!form.valid">
+          Inicia sesión
+        </button>
+        <p>¿Todavía no tienes una cuenta? <a routerLink="/signup">Registrate</a></p>
+      </form>
+    </div>
+  </div>
