@@ -32,7 +32,7 @@ body {
 }
 
 .logo img {
-    width: 400px; /* Ajusta el tamaño del logo según sea necesario */
+    width: 400px; 
     height: auto;
 }
 
@@ -85,14 +85,18 @@ body {
     background-color: #FBB768;
 }
 
+.encomienda-card.selected {
+    background-color: #FBB768; /* Color cuando está seleccionada */
+    border: 2px solid #1E3A8A; /* Borde adicional para destacar */
+}
+
 .Botones-Inferiores {
     display:flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.button-Instrucciones-Entrega,
-.button-Confirmar {
+.button-Instrucciones-Entrega{
     display: block;
     padding: 20px;
     margin: 20px;
@@ -105,21 +109,41 @@ body {
     cursor: pointer; /* Cambia el cursor a pointer */
 }
 
+.button-Confirmar{
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    width: 540px;
+    cursor: pointer;
+}
+
 .button-Instrucciones-Entrega {
     background-color: #FFD5A5;
     color: #FFF9F2;
 }
 
-.button-Confirmar {
+.button-Confirmar.disabled {
     background-color: #E8E0D7;
     color: #FFF9F2;
+    cursor:not-allowed;
+    border: none;
 }
 
-.button-Instrucciones-Entrega:hover{
+.button-Confirmar {
+    background-color: #FFD5A5;
+    color: #FFF9F2;
+    border: 2px solid #1E3A8A;
+}
+
+.button-Instrucciones-Entrega:hover, .button-Confirmar:not(.button-Confirmar.disabled):hover{
     background-color: #FBB768;
 }
 
-
-/* .button-Confirmar:hover{
+.button-Confirmar:hover{
     background-color: #FBB768;
-} */
+}

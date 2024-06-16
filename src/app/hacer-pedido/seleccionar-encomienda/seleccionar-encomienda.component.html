@@ -9,7 +9,9 @@
             </div>
         </div>
         <div class="Tipo-Encomiendas">
-            <div class="Encomienda-Comida encomienda-card" (click)="selectEncomienda('Encomienda de comida')">
+            <div class="Encomienda-Comida encomienda-card" 
+            [class.selected]="selectedEncomienda === 'Encomienda de comida'" 
+            (click)="selectEncomienda('Encomienda de comida')">
                 <img src="..\assets\comida.png" alt="Comida">
                 <div class="content">
                     <h1>Encomienda de comida</h1>
@@ -19,7 +21,9 @@
                     alimentos de calidad directamente a su puerta</p>
                 </div>
             </div>
-            <div class="Encomienda-Regular encomienda-card" (click)="selectEncomienda('Encomienda regular')">
+            <div class="Encomienda-Regular encomienda-card"
+            [class.selected]="selectedEncomienda === 'Encomienda regular'" 
+             (click)="selectEncomienda('Encomienda regular')">
                 <img src="..\assets\package.png" alt="Paquete">
                 <div class="content">
                     <h1>Encomienda regular</h1>
@@ -29,7 +33,9 @@
                     que tu paquete llegue de manera segura y puntual a su destino final.</p>
                 </div>
             </div>
-            <div class="Mudanza encomienda-card" (click)="selectEncomienda('Mudanza')">
+            <div class="Mudanza encomienda-card"
+            [class.selected]="selectedEncomienda === 'Mudanza'" 
+            (click)="selectEncomienda('Mudanza')">
                 <img src="..\assets\shipping2.png" alt="Mudanza">
                 <div class="content">
                     <h1>Mudanza</h1>
@@ -40,7 +46,12 @@
             </div>
             <div class="Botones-Inferiores">
                 <a href="javascript:void(0)" class="button-Instrucciones-Entrega" (click)="onInstruccionesEntrega()">Instrucciones de Entrega</a>
-                <a href="javascript:void(0)" class="button-Confirmar">Confirmar</a>
+                <button
+                    [disabled]="isConfirmarDisabled()" 
+                    class="button-Confirmar" 
+                    [class.disabled]="isConfirmarDisabled()"
+                    (click)="confirmarPedido()">Confirmar
+                </button>
             </div>
         </div>
     </div>
