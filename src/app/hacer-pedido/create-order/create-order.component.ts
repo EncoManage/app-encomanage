@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateOrderComponent {
   order:OrderRequest;
+  isFormValid: boolean = false;
 
   constructor(private orderService: OrderService, private router: Router) {
     this.order = this.orderService.getOrder();
@@ -22,7 +23,12 @@ export class CreateOrderComponent {
 
   onToggleExpressShipping(): void{
     this.order.express_shipping=!this.order.express_shipping;
+    this.checkFormValidity();
     console.log('Envio Express activado: ', this.order.express_shipping);
+  }
+
+  checkFormValidity(): void {
+    this.isFormValid = !!this.order.pickup_address && !!this.order.shipping_address && !!this.order.tipo_encomienda;
   }
 
   onSubmitOrder(): void{

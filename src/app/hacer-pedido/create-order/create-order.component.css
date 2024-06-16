@@ -45,7 +45,7 @@ body {
     margin-bottom: 15px;
 }
 
- .button-Seleccionar-Encomienda,.button-Envio-Express, .button-Mapa-Interactivo {
+ .button-Seleccionar-Encomienda,.button-Envio-Express, .button-Mapa-Interactivo{
     display: block;
     padding: 20px;
     margin: 50px 0;
@@ -61,27 +61,39 @@ body {
     align-content: center;
 }
 
-.button-Crear-Pedido{
+.button-Crear-Pedido {
     display: block;
     padding: 20px;
-    margin: 10px 0;
+    margin: 50px 0;
     text-align: center;
-    background-color:#E8E0D7;
+    background-color: #FFD5A5;
     color: #FFF9F2;
     text-decoration: none;
     border-radius: 20px;
     font-size: 32px;
     font-weight: bold;
-    width: 582px;
-    height: 48px;
-    align-content: center;
+    width: 620px;
+    height: 80px;
+    cursor: pointer;
+    border: none;
+}
+
+.button-Crear-Pedido.disabled {
+    background-color: #E8E0D7;
+    cursor: not-allowed;
+
 }
 
 
-.button-Seleccionar-Encomienda:hover, .button-Envio-Express:hover, .button-Mapa-Interactivo:hover{
+.button-Seleccionar-Encomienda:hover, .button-Envio-Express:hover, .button-Mapa-Interactivo:hover, .button-Crear-Pedido:hover{
     background-color: #FBB768;
 }
 
+
+.button-Envio-Express.active {
+    background-color: #1E3A8A;
+    color: #FFF;
+}
 .Botones-Derecha {
     margin-top: 30px;
 }
