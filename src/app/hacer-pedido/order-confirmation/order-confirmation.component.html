@@ -1,0 +1,13 @@
+<div class="confirmation">
+    <h1>¡Su pedido ha sido confirmado!</h1>
+    <div class="details">
+      <h2>Detalles del Pedido:</h2>
+      <p><strong>Tipo de Encomienda:</strong> {{ order.tipo_encomienda }}</p>
+      <p><strong>Dirección de Recogida:</strong> {{ order.pickup_address }}</p>
+      <p><strong>Dirección de Entrega:</strong> {{ order.shipping_address }}</p>
+      <p><strong>Envío Express:</strong> {{ order.express_shipping ? 'Sí' : 'No' }}</p>
+      <p><strong>Instrucciones:</strong> {{ instrucciones }}</p>
+    </div>
+    <button (click)="volverAlMenu()">Volver al menú</button>
+  </div>
+  
