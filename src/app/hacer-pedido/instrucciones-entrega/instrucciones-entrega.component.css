@@ -18,6 +18,7 @@ body{
     margin-bottom: 20px;
     color: #1E3A8A;
     font-weight: 900;
+    width: 70%;
 }
 
 .Instrucciones-Entrega p {
@@ -70,4 +71,15 @@ body{
 
 .Instrucciones-Entrega button:hover {
     background-color: #FBB768;
+}
+
+.Instrucciones-Entrega img{
+    width: 440px;
+    height: auto;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
