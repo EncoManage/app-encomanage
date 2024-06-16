@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
 import { OrderRequest } from '../model/order-request.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-confirmation',
@@ -11,7 +12,7 @@ export class OrderConfirmationComponent implements OnInit{
   order: OrderRequest;
   instrucciones: string;
 
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService, private router: Router) {
     this.order = this.orderService.getOrder();
     this.instrucciones = this.orderService.getInstrucciones();
   }
@@ -19,6 +20,6 @@ export class OrderConfirmationComponent implements OnInit{
   ngOnInit(): void {}
 
   volverAlMenu(): void {
-    // Navega de vuelta al menú principal
+    this.router.navigate(['/home']);
   }
 }
