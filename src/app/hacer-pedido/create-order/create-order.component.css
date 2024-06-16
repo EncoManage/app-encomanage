@@ -130,3 +130,8 @@ body {
     color: #FFD5A5;
     font-size: 32px;
   }
+
+  .Derecha img{
+    width: 400px;
+    align-self: center;
+  }

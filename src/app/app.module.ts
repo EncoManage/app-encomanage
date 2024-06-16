@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
+import { OrderService } from './services/order.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
     FormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
