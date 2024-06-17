@@ -17,9 +17,9 @@ export class HomeComponent {
 
   navigate() {
     if (this.selectedProfile === 'consumer') {
-      this.router.navigate(['/menu-consumer']);
+      this.router.navigate(['/menus/consumidor']);
     } else if (this.selectedProfile === 'business') {
-      this.router.navigate(['/menu-business']);
+      this.router.navigate(['/menus/empresa']);
     } else {
       alert('Por favor, seleccione un perfil antes de continuar. Esto nos ayudará a personalizar tu experiencia en la plataforma según tus necesidades y preferencias. ¡Gracias!');
     }

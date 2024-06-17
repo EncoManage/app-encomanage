@@ -6,7 +6,8 @@ const routes: Routes = [
  { path:'home',component:HomeComponent},
  { path: 'hacer-pedido', loadChildren: () => import('./hacer-pedido/hacer-pedido.module').then(m => m.HacerPedidoModule) },
  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
- { path: '', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }  // Redirecciona a 'home' cuando la ruta está vacía
+ { path: '', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+ { path: 'menus', loadChildren: () => import('./menus/menus.module').then(m => m.MenusModule) }  // Redirecciona a 'home' cuando la ruta está vacía
 ];
 
 @NgModule({

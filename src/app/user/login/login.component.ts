@@ -41,9 +41,9 @@ export class LoginComponent {
     const { email, password } = this.form.value;
 
     if (email === this.email1 && password === "12345") {
-      this.router.navigate(['account']);
+      this.router.navigate(['menus/consumidor']);
     } else if (email === this.email2 && password === "67890") {
-      this.router.navigate(['account']);
+      this.router.navigate(['menus/empresa']);
     } else {
       alert('Credenciales incorrectas. Inténtelo de nuevo. Prueba con el email:consumidor@gmail.com y contraseña:12345 para probar el perfil consumidor, o el email:empresa@gmail.com y contraseña:67890 para probar el perfil empresa');
     }
