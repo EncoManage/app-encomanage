@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="left-side">
+      <img src="../assets/parcelapp.png" alt="Left Image" class="left-image">
+    </div>
+    
+    <div class="right-side">
+      <div class="top-section">
+        <div class="logo-left-side">
+          <img src="../assets/paraConsumidores.PNG" alt="Encomanage Logo" class="logo">
+          <div class="header-text">
+            <p>Aquí encontrarás todas las herramientas que necesitas para hacer que tus envíos sean rápidos y sencillos. ¿Listo para enviar tu próximo paquete?</p>
+          </div>
+        </div>
+        <div class="logo-right-side">
+          <img src="../assets/consumidor.png" alt="Profile Picture" class="profile-pic">
+        </div>
+      </div>
+      
+      <div class="buttons">
+        <button mat-raised-button class="custom-button" (click)="newShipment()">
+          <img src="../assets/agregar.png" alt="New Shipment"> <span>Haz un nuevo envío</span>
+        </button>
+        <button mat-raised-button class="custom-button" (click)="activeShipments()">
+          <img src="../assets/pedidos.png" alt="Active Orders"> <span>Envíos y pedidos activos</span>
+        </button>
+        <button mat-raised-button class="custom-button" (click)="shipmentRecord()">
+          <img src="../assets/historial.png" alt="Order History"> <span>Historial de pedidos</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
