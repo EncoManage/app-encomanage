@@ -6,13 +6,15 @@ import { MenusComponent } from './menus.component';
 import { ConsumidorComponent } from './consumidor/consumidor.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { MaterialModule } from '../material/material.module';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 
 
 @NgModule({
   declarations: [
     MenusComponent,
     ConsumidorComponent,
-    EmpresaComponent
+    EmpresaComponent,
+    NotificacionesComponent
   ],
   imports: [
     CommonModule,

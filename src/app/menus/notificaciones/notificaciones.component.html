@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="left-side">
+      <img src="../assets/parcelapp.png" alt="Left Image" class="left-image">
+    </div>
+    
+    <div class="right-side">
+      <h1>Ajustes</h1>
+      
+      <form [formGroup]="form">
+        <div class="section">
+          <h2>Escoja los tipos de notificaciones que desea recibir</h2>
+          <div class="checkbox-group">
+            <mat-checkbox formControlName="email" (change)="handleNotificationChange($event, 'Correo electrónico')">Correo electrónico</mat-checkbox>
+            <mat-checkbox formControlName="sms" (change)="handleNotificationChange($event, 'Mensajería SMS')">Mensajería SMS</mat-checkbox>
+            <mat-checkbox formControlName="push" (change)="handleNotificationChange($event, 'Notificación Push up')">Notificación Push up</mat-checkbox>
+          </div>
+        </div>
+  
+        <div class="section">
+          <h2>Escoja los servicios de los que desea recibir notificaciones</h2>
+          <div class="checkbox-group">
+            <mat-checkbox formControlName="packageStatus" (change)="handleServiceChange($event, 'Estado del paquete')">Estado del paquete</mat-checkbox>
+            <mat-checkbox formControlName="chats" (change)="handleServiceChange($event, 'chats')">Chats</mat-checkbox>
+            <mat-checkbox formControlName="promotions" (change)="handleServiceChange($event, 'promociones')">Promociones</mat-checkbox>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

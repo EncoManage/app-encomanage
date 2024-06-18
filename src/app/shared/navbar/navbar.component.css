@@ -62,10 +62,15 @@ mat-toolbar {
     padding: 0 16px;
 }
 
-.logo{
+/*.logo{
     font-size: 1.5em;
     font-weight: bold;
-}
+}*/
+
+.logo {
+    height: 60px;
+    width: 300px;
+  }
 
 /* Estilo para los botones */
 mat-toolbar button {

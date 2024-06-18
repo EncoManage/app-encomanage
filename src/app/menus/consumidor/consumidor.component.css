@@ -79,6 +79,17 @@
     height: 130px;
   }
   
+  .image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .image-button img {
+    display: block;
+  }
+
   .buttons {
     width: 100%;
     display: flex;

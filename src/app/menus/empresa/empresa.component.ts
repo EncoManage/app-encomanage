@@ -20,4 +20,8 @@ export class EmpresaComponent {
   chats(): void{
     this.Router.navigate(['/hacer-pedido/create-order'])
   }
+
+  notificaciones(): void{
+    this.Router.navigate(['/menus/notificaciones'])
+  }
 }
