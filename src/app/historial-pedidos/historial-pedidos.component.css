@@ -1,0 +1,22 @@
+
+.contenedor-principal{
+    display: inline
+}
+.contenedor-izquierda{
+    background-color:#FFF5F2 ;
+    display: flex;
+}
+.titulo {
+    justify-content: space-between;
+    align-items: center;
+    color: #1E3A8A;
+}
+
+.boton1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #1E3A8A;
+}

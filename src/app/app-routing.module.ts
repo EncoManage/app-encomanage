@@ -4,7 +4,8 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{path:'home',component:HomeComponent},
  { path: 'hacer-pedido', loadChildren: () => import('./hacer-pedido/hacer-pedido.module').then(m => m.HacerPedidoModule) },
- { path: '', redirectTo: '/home', pathMatch: 'full' }  // Redirecciona a 'home' cuando la ruta está vacía
+ { path: '', redirectTo: '/home', pathMatch: 'full' },
+ { path: 'historial-de-pedidos', loadChildren: () => import('./historial-de-pedidos/historial-de-pedidos.module').then(m => m.HistorialDePedidosModule) }  // Redirecciona a 'home' cuando la ruta está vacía
 ];
 
 @NgModule({

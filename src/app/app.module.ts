@@ -9,20 +9,24 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
+import { HistorialPedidosComponent } from './historial-pedidos/historial-pedidos.component';
+import { HistorialDePedidosModule } from './historial-de-pedidos/historial-de-pedidos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    HistorialPedidosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     HacerPedidoModule,
-    FormsModule
+    FormsModule,
+    HistorialDePedidosModule
   ],
   providers: [
     provideAnimationsAsync()
