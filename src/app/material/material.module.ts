@@ -10,7 +10,9 @@ import {MatCommonModule} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -26,8 +28,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
-
+    MatIconModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatTableModule,
@@ -40,7 +43,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ]
 })
 export class MaterialModule { }
