@@ -5,13 +5,17 @@ import { HistorialDePedidosRoutingModule } from './historial-de-pedidos-routing.
 import { HistorialDePedidosComponent } from './historial-de-pedidos.component';
 import { HistorialMenuComponent } from './historial-menu/historial-menu.component';
 import { FiltrarPedidosComponent } from './filtrar-pedidos/filtrar-pedidos.component';
+import { ListaActualizadaComponent } from './lista-actualizada/lista-actualizada.component';
+import { ListaDeEnviosComponent } from './lista-de-envios/lista-de-envios.component';
 
 
 @NgModule({
   declarations: [
     HistorialDePedidosComponent,
     HistorialMenuComponent,
-    FiltrarPedidosComponent
+    FiltrarPedidosComponent,
+    ListaActualizadaComponent,
+    ListaDeEnviosComponent
   ],
   imports: [
     CommonModule,
