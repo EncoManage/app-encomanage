@@ -1,0 +1,26 @@
+
+.contenedor-principal{
+    display: flex
+}
+.contenedor-izquierda{
+    background-color:#FFF5F2 ;
+    display: block;
+}
+.titulo {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    color: #1E3A8A;
+}
+
+.estilo-boton{
+
+}
+.boton1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #1E3A8A;
+}
