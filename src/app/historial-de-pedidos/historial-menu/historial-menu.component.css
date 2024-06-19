@@ -1,7 +1,7 @@
 
 .contenedor-principal{
     display: flex;
-    
+    height: 850px;
 }
 .contenedor-izquierda{
     background-color:#FFF5F2 ;
@@ -20,8 +20,9 @@
     color: #1E3A8A;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    padding-top: 50px;
-    font-size: 80px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-size: 70px;
 }
 .boton-content{
     display: inline-flex;
@@ -29,13 +30,13 @@
     text-decoration: none;
     border-radius: 20px;
     width: 600x;
-    height: 100px;
-    padding: 2%;
+    height: 80px;
+    
 }
 .boton-display-text1{
-    font-size: 56px;
+    font-size: 46px;
     color: #FFF9F2;
-    text-align: center;
+    padding-left: 13%;
     width: 482px;
     height: 60px;
     margin: auto;
@@ -43,9 +44,9 @@
     font-weight: bold;
 }
 .boton-display-text2{
-    font-size: 45px;
+    font-size: 35px;
     color: #FFF9F2;
-    text-align: center;
+    padding-left: 10%;
     width: 482px;
     height: 60px;
     margin: auto;
@@ -53,9 +54,9 @@
     font-weight: bold;
 }
 .boton-display-text3{
-    font-size: 35px;
+    font-size: 30px;
     color: #FFF9F2;
-    text-align: center;
+    padding-left: 8%;
     width: 482px;
     height: 60px;
     margin: auto;
@@ -65,10 +66,10 @@
 .boton-bottom-text{
     font-weight: bold;
     color: #1E3A8A;
-    font-size: 32px;
+    font-size: 25px;
 }
 .boton{
-    padding-top: 100px;
+    padding-top: px;
     overflow: hidden;
     margin: auto;
     width: 620px;
@@ -77,8 +78,94 @@
 .foto-boton{
     color: #000000;
     text-align: center;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: auto;
     padding-left: 30px;
+}
+.logo-container{
+    margin: auto;
+    width: 440px;
+    height: 225px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+.logo{
+    color: #000000;
+    width: 440px;
+    height: 225px;
+}
+.mensaje-container{
+    overflow: hidden;
+    margin: auto;
+    width: 620px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #FFD5A5;
+    text-decoration: none;
+}
+.mensaje1{
+    padding-top: 10px;
+    color: #1E3A8A;
+    width: 620px;
+    height: 80px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    font-size: 50px;
+}
+.pedido-boton{
+    padding-top: 20px;
+    overflow: hidden;
+    margin: auto;
+    width: 620px;
+    height: 380px;
+}
+.pedido-contenedor{
+    
+    display: inline-flex;
+    background-color: #FFD5A5;
+    text-decoration: none;
+    border-radius: 20px;
+    width: 620px;
+    height: 280px;
+}
+.info-text-container{
+    display: block;
+}
+.pedido-mensaje{
+    font-size: 30px;
+    color: #1E3A8A;
+    padding-top: 55px;
+    padding-left: 0px;
+    width: 400px;
+    height: 100px;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    line-height: 1.4;
+    
+}
+.desc-1{
+    font-size: 15px;
+    color: #000000;
+    padding-top: 0px;
+    padding-left: 0px;
+    width: 300px;
+    height: 50px;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    line-height: 1.4;
+    
+}
+.pedido-img{
+    color: #000000;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    padding-left: 0px;
+    border-radius: 20px;
 }
