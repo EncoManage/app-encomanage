@@ -7,6 +7,7 @@ import { HistorialMenuComponent } from './historial-menu/historial-menu.componen
 import { FiltrarPedidosComponent } from './filtrar-pedidos/filtrar-pedidos.component';
 import { ListaActualizadaComponent } from './lista-actualizada/lista-actualizada.component';
 import { ListaDeEnviosComponent } from './lista-de-envios/lista-de-envios.component';
+import { DetallesDelEnvioComponent } from './detalles-del-envio/detalles-del-envio.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListaDeEnviosComponent } from './lista-de-envios/lista-de-envios.compon
     HistorialMenuComponent,
     FiltrarPedidosComponent,
     ListaActualizadaComponent,
-    ListaDeEnviosComponent
+    ListaDeEnviosComponent,
+    DetallesDelEnvioComponent
   ],
   imports: [
     CommonModule,
