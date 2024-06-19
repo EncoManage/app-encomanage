@@ -1,0 +1,113 @@
+.main-body{
+    background-color: #F6A13C ;
+    height: 850px;
+    width: 100%;
+}
+.titulo-container{
+    justify-content: space-between;
+    display: flex;
+    margin:auto;
+   
+    width: 100%;
+}
+.titulo {
+    text-align: center;
+    justify-content: space-between;
+    align-items: left;
+    color: #1E3A8A;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    margin: auto;
+    font-size: 60px;
+}
+.logo{
+    color: #000000;
+    width: 440px;
+    height: 225px;
+    align-items: right;
+    margin: auto;
+    
+}
+
+.mensaje-contador-container{
+    display: flex;
+}
+.mensaje-total1{
+    align-items: left;
+    text-align: left;
+    justify-content: space-between;
+    color: #1E3A8A;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    padding-left: 150px;
+}
+.mensaje-total2{
+    padding-left: 10px;
+    align-items: left;
+    text-align: left;
+    justify-content: space-between;
+    color: #1E3A8A;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 30px;
+}
+
+.contenedor-seleccionar{
+    display: block;
+    
+}
+.mensaje-seleccionar{
+    padding-left: 150px;
+    align-items: left;
+    text-align: left;
+    justify-content: space-between;
+    color: #1E3A8A;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    margin: auto;
+}
+.contenedor-lista-cont{
+   
+    display: flex;
+    margin: auto;
+}
+.selec-pedido-container{
+    width: 820px;
+    height: 420px;
+    border-radius: 20px;
+    background-color: #131313;
+    text-decoration: none;
+    display: flex;
+    margin: auto;
+}
+
+.mensaje-continuar-container{
+    /*overflow: hidden;*/
+    width: 620px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #FFD5A5;
+    text-decoration: none;
+    margin: auto;
+}
+.mensaje-continuar{
+    padding-top: 10px;
+    color: #4B5981;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: 45px;
+    margin: auto;
+}
