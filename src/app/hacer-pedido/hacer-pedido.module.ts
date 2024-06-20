@@ -7,6 +7,7 @@ import { HacerPedidoComponent } from './hacer-pedido.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { SeleccionarEncomiendaComponent } from './seleccionar-encomienda/seleccionar-encomienda.component';
 import { InstruccionesEntregaComponent } from './instrucciones-entrega/instrucciones-entrega.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { InstruccionesEntregaComponent } from './instrucciones-entrega/instrucci
     HacerPedidoComponent,
     CreateOrderComponent,
     SeleccionarEncomiendaComponent,
-    InstruccionesEntregaComponent
+    InstruccionesEntregaComponent,
+    OrderConfirmationComponent
   ],
   imports: [
     CommonModule,

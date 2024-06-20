@@ -9,21 +9,26 @@
     <div class="Direcciones">
         <div class="Direccion-Recogida">
             <h1>Ingresar la direccion de recogida</h1>
-            <input type="text" [(ngModel)]="order.pickup_address">
+            <input type="text" [(ngModel)]="order.pickup_address" (input)="checkFormValidity()">
         </div>
         <div class="Direccion-Entrega">
             <h1>Ingresar la direccion de entrega</h1>
-            <input type="text" [(ngModel)]="order.shipping_address">
+            <input type="text" [(ngModel)]="order.shipping_address"  (input)="checkFormValidity()">
         </div>
     </div>
-    <a href="javascript:void(0)" (click)="onToggleExpressShipping()" class="button-Envio-Express">Activar Envio Express</a>
+    <a href="javascript:void(0)" [ngClass]="{'active': order.express_shipping}" (click)="onToggleExpressShipping()" class="button-Envio-Express">Activar Envio Express</a>
     </div>
     <div class="Derecha">
+        <img src="..\assets\logo.PNG" alt="">
         <h1>¿No puede encontrar alguna direccion?</h1>
         <h2>!Ubiquela en nuestro nuevo mapa interactivo!</h2>
         <div class="Butones Derecha">
             <a href="javascript:void(0)" class="button-Mapa-Interactivo">Entrar al Mapa Interactivo</a>
-            <a href="javascript:void(0)" (click)="onSubmitOrder()" class="button-Crear-Pedido">Crear Pedido</a>
+            <button href="javascript:void(0)"  
+                class="button-Crear-Pedido"
+                [ngClass]="{'disabled': !isFormValid}" 
+                (click)="onSubmitOrder()"
+                [disabled]="!isFormValid">Crear Pedido</button>
         </div>
     </div>
     </div>

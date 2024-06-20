@@ -1,0 +1,37 @@
+<body>
+    <div class="confirmation">
+      <div class="header">
+        <button (click)="volverAlMenu()">Volver al menú</button>
+      </div>
+      <img src="..\assets\logo.PNG" alt="">
+      <div class="Title">
+        <h1>¡Su pedido ha sido confirmado!</h1>
+      </div>
+      <div class="details">
+        <h2>Detalles del Pedido:</h2>
+        <div class="order-summary">
+          <div class="order-item-encomienda">
+            <h1><strong>Tipo de Encomienda:</strong></h1>
+            <img src="..\assets\package.png" alt="Tipo de Encomienda">
+            <p>{{ order.tipo_encomienda }}</p>
+          </div>
+          <div class="order-item">
+            <h1><strong>Dirección de Recogida:</strong></h1>
+            <p>{{ order.pickup_address }}</p>
+            <h1><strong>Dirección de Entrega:</strong></h1>
+            <p>{{ order.shipping_address }}</p>
+          </div>
+          <div class="order-item">
+            <h1><strong>Envío Express:</strong></h1>
+            <p>{{ order.express_shipping ? 'Sí' : 'No' }}</p>
+          </div>
+          <!-- <div class="order-item">
+            <p><strong>Instrucciones:</strong></p>
+            <p>{{ instrucciones }}</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  

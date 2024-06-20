@@ -1,3 +1,4 @@
+<!--aw>
 <div class="container">
    <div class="image-section">
        <img src="../../assets/negro.jpg" alt="Descripción de la imagen">
@@ -7,13 +8,54 @@
        <p>La plataforma donde tienes control total sobre tus envíos</p>
        <h2>¡Comienza tu experiencia!</h2>
        <a href="#" class="button google-button">
-           <img src="../../assets/google.png" alt="Google Icon">
+
+           <img src="..\assets\chad.jpg" alt="Google Icon">
+
            <span>Continua con Google</span>
        </a>
        <a href="#" class="button correo-button">
-           <img src="../../assets/negro.jpg" alt="Email Icon">
+           <img src="..\assets\google.png" alt="Email Icon">
            <span>Continua con tu correo</span>
        </a>
        <p class="login-link">¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
    </div>
+</div>
+-->
+  <div class="container">
+    <div class="left-side">
+        <img src="..\assets\parcelapp.png" alt="Ilustración">
+    </div>
+    <div class="right-side">
+        <div class="profile-selection">
+            <h2>Selección de perfil</h2>
+            <p>¡Ahora ya eres miembro de Encomanage! Seleccione uno de nuestros perfiles para brindarte servicios más personalizados</p>
+            <div class="profiles">
+              <div 
+                class="profile-option" 
+                [class.selected]="selectedProfile === 'consumer'" 
+                (click)="selectProfile('consumer')">
+                <img src="..\assets\shipping2.png" alt="Consumidor individual">
+                <div class="profile-text">
+                  <h3>Consumidor individual</h3>
+                  <p>Obtén acceso rápido para enviar y rastrear tus paquetes de manera fácil y segura. Recibe notificaciones en tiempo real sobre el estado de tus envíos y gestiona tus entregas de acuerdo a tus preferencias.</p>
+                </div>
+              </div>
+              <div 
+                class="profile-option" 
+                [class.selected]="selectedProfile === 'business'" 
+                (click)="selectProfile('business')">
+                <img src="..\assets\shipping1.png" alt="Empresa de e-commerce">
+                <div class="profile-text">
+                  <h3>Empresa de e-commerce</h3>
+                  <p>Aprovecha herramientas avanzadas para simplificar y optimizar tus operaciones de envío. Gestiona grandes cantidades de envíos con facilidad desde la programación hasta el seguimiento y la entrega. Obtén descuentos exclusivos para hacer crecer tu negocio.</p>
+                </div>
+              </div>
+            </div>
+            <button 
+              class="select-button" 
+              (click)="navigate()">
+              Seleccionar
+            </button>
+        </div>
+    </div>
 </div>

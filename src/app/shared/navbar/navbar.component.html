@@ -1,8 +1,44 @@
+<!--w>
 <header class="navbar">
     <div class="navbar-brand">Encomanage</div>
     <nav class="navbar-nav">
         <a routerLink="/home" routerLinkActive="active">Inicio</a>
         <a routerLink="/hacer-pedido/create-order" routerLinkActive="active">Hacer un pedido</a>
-        <a routerLink="/historial-de-pedidos/historial-menu" routerLinkActive="active">Ver pedidos</a>
+        <a routerLink="/ver-pedidos" routerLinkActive="active">Ver pedidos</a>        
     </nav>
 </header>
+<-->
+
+<mat-toolbar color="primary">
+    <span class="logo">Encomanage</span>
+
+    <button mat-button routerLink="/home" class="ms-3">
+        Inicio
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="pedidoMenu">
+        <mat-icon class="color-icon">shop</mat-icon>Pedidos            
+    </button>
+   
+    <mat-menu #pedidoMenu>
+        <button mat-menu-item (click)="makeOrder()">
+            <mat-icon class="color-icon">library_add</mat-icon> Hacer un pedido
+        </button>
+        <button mat-menu-item (click)="seeOrders()">
+            <mat-icon class="color-icon">assessment</mat-icon> Ver pedidos
+        </button>
+    </mat-menu>
+
+    <span class="spacer"></span>
+
+    <button mat-button [matMenuTriggerFor]="userMenu">
+        <mat-icon class="color-icon">account_circle</mat-icon>            
+    </button>
+
+    <mat-menu #userMenu>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon class="color-icon">logout</mat-icon> Cerrar sesión
+        </button>
+    </mat-menu>
+
+</mat-toolbar>

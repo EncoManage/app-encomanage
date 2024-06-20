@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  selectedProfile: string | null = null;
 
+  constructor(private router: Router) {}
+
+  selectProfile(profile: string) {
+    this.selectedProfile = profile;
+  }
+
+  navigate() {
+    if (this.selectedProfile === 'consumer') {
+      this.router.navigate(['/menus/consumidor']);
+    } else if (this.selectedProfile === 'business') {
+      this.router.navigate(['/menus/empresa']);
+    } else {
+      alert('Por favor, seleccione un perfil antes de continuar. Esto nos ayudará a personalizar tu experiencia en la plataforma según tus necesidades y preferencias. ¡Gracias!');
+    }
+  }
 }

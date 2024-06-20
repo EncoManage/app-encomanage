@@ -1,0 +1,114 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F6A13C;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.confirmation {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F6A13C;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.confirmation button {
+    background-color: #FFD5A5;
+    color: #1E3A8A;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.confirmation button:hover {
+    background-color: #FBB768;
+}
+
+.confirmation img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.Title {   
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Title h1 {
+    font-size: 64px;
+    width: 65%;
+    font-weight: bold;
+    color: #FFF9F2;
+}
+
+.confirmation .details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.confirmation .details h2 {
+    color: #1E3A8A;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.confirmation .order-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto; 
+    gap: 20px;
+}
+
+.confirmation .order-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation .order-item-encomienda {
+    background-color: #FFD5A5;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation .order-item h1, .confirmation .order-item-encomienda  h1 {
+    margin: 5px 0;
+    color: #FFF9F2;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.confirmation .order-item p {
+    margin: 5px 0;
+    color: #131313;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.confirmation .order-item-encomienda img {
+    width: 134px;
+    height: 134px;
+    margin-bottom: 10px;
+}
