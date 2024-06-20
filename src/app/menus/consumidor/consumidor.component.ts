@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { AuthService } from '../../user/services/auth.service';
 
 @Component({
   selector: 'app-consumidor',
@@ -8,21 +9,26 @@ import { Component } from '@angular/core';
 })
 export class ConsumidorComponent {
   
-  constructor(private Router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/'])
+  }
 
   newShipment(): void{
-    this.Router.navigate(['/hacer-pedido/create-order'])
+    this.router.navigate(['/hacer-pedido/create-order'])
   }
 
   activeShipments(): void{
-    this.Router.navigate(['/hacer-pedido/create-order'])
+    this.router.navigate(['/hacer-pedido/create-order'])
   }
 
   shipmentRecord(): void{
-    this.Router.navigate(['/hacer-pedido/create-order'])
+    this.router.navigate(['/hacer-pedido/create-order'])
   }
 
   notificaciones(): void{
-    this.Router.navigate(['/menus/notificaciones'])
+    this.router.navigate(['/menus/notificaciones'])
   }
 }

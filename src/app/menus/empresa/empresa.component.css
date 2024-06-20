@@ -95,7 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 2%;
   }
   
   .custom-button {
@@ -128,5 +128,26 @@
     font-style: normal;
     flex: 1;
   }
+
+  .logout-section {
+    margin-top: 0.5%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.logout-button {
+  font-family: "Poppins", sans-serif;
+  background: #1E3A8A;
+  border-radius: 10px;
+  color: #F6A13C;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.color-icon{
+  color:#F6A13C;
+}
   
   

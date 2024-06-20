@@ -1,0 +1,17 @@
+<div class="chat-container">
+  <div class="messages">
+    <div *ngFor="let msg of messages" class="message" [ngClass]="{'user': msg.isUserMessage, 'system': !msg.isUserMessage}" matTooltip="{{ msg.timestamp | date:'short' }}">
+      <span class="sender">{{ msg.sender }}</span>: <span class="text">{{ msg.text }}</span>
+    </div>
+  </div>
+  
+  <form [formGroup]="chatForm" (ngSubmit)="sendMessage()" class="chat-form">
+    <mat-form-field class="message-input">
+      <mat-label>Mensaje</mat-label>
+      <input matInput formControlName="message" placeholder="Escribe un mensaje">
+    </mat-form-field>
+    <button mat-raised-button class="send-button" type="submit" [disabled]="chatForm.invalid">Enviar</button>
+    <button mat-raised-button class="custom-button" type="button" routerLink="/mensajes">Volver</button>
+  </form>
+</div>
+  

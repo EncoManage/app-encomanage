@@ -115,7 +115,7 @@ p {
 */
 
 .left-side {
-    background-color: #FFA500;
+    background-color: #F6A13C;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ p {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #FFA500;
+    background-color: #F6A13C;
     padding: 20px;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
@@ -250,5 +250,5 @@ p {
   }
   
   .select-button:not(:disabled):hover {
-    background-color: #FFA500;
+    background-color: #F6A13C;
   }

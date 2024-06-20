@@ -9,8 +9,8 @@
             <mat-form-field class="custom-form-field" appearance="outline">
                 <mat-label>Nombre</mat-label>
                 <mat-icon matPrefix>person</mat-icon>
-                <input matInput type="text" placeholder="Eje: María García" formControlName="firstName" required>
-                <mat-error *ngIf="controlHasError('firstName', 'required')">
+                <input matInput type="text" placeholder="Eje: María García" formControlName="name" required>
+                <mat-error *ngIf="controlHasError('name', 'required')">
                     Este campo es obligatorio
                 </mat-error>
             </mat-form-field>
@@ -39,7 +39,7 @@
                     Ingrese una contraseña de al menos 4 caracteres.
                 </mat-error>
             </mat-form-field>
-            <button routerLink="/verificacion" class="register-button" mat-raised-button color="primary" [disabled]="!form.valid">
+            <button class="register-button" mat-raised-button color="primary" [disabled]="!form.valid" [ngClass]="{'active': form.valid}">
                 Registrar
             </button>
             <p>¿Ya tienes una cuenta? <a routerLink="/">Inicia Sesión</a></p>

@@ -33,6 +33,7 @@
     font-weight: 700;
     font-style: normal;
     margin-left: 20px;
+    display: flex;
   }
   
   .section {
@@ -63,4 +64,20 @@
   .opcion{
     color:#1E3A8A;
   }
+
+  .logout-button {
+    font-family: "Poppins", sans-serif;
+    background: #1E3A8A;
+      border-radius: 10px;
+      color: #F6A13C;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left:5%;
+  }
   
+  .top{
+    display: flex;
+    align-items: center;
+  }

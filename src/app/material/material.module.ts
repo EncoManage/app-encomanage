@@ -13,6 +13,10 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card'; 
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatFormField} from '@angular/material/form-field';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -30,7 +34,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatMenuModule,
     MatIconModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatFormField,
+    MatTooltipModule
   ],
   exports:[
     MatTableModule,
@@ -45,7 +53,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatMenuModule,
     MatIconModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatFormField,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

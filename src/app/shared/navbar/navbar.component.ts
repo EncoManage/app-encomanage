@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../user/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  private router = inject(Router);
+  constructor(private authService: AuthService, private router: Router) { }
 
   logout(): void {
+    this.authService.logout();
     this.router.navigate(['/'])
   }
 
@@ -19,5 +21,9 @@ export class NavbarComponent {
 
   seeOrders(): void{
     this.router.navigate(['/ver-pedidos'])
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

@@ -1,0 +1,59 @@
+<div class="container">
+    <h1 class="titulo">Agregar Chat</h1>
+
+    <div class="row justify-content-center my-5">
+        <div class="col-md-6 col-lg-4">
+            <form class="mt-5" autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                <mat-form-field class="mb-2 w-100" appearance="outline">
+                    <mat-label>Receptor</mat-label>
+                    <input matInput formControlName="toAccount" placeholder="Ingrese el nombre del Receptor">   
+                    <mat-error *ngIf="controlHasError('toAccount', 'required')">
+                        Este campo es obligatorio
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mb-2 w-100" appearance="outline">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput formControlName="type" placeholder="Ingrese el tipo de chat">   
+                    <mat-error *ngIf="controlHasError('type', 'required')">
+                        Este campo es obligatorio
+                    </mat-error>
+                    <mat-error *ngIf="controlHasError('type', 'invalidChatType') && !controlHasError('type', 'required')">
+                        Debe ingresar el valor Proveedor o Cliente 
+                     </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mb-2 w-100" appearance="outline">
+                    <mat-label>Fecha</mat-label>
+                    <input matInput formControlName="date" placeholder="Ingrese la fecha del uso de chat:">
+                    <mat-error *ngIf="controlHasError('date', 'required')">
+                        Este campo es obligatorio
+                    </mat-error>
+                    <mat-error *ngIf="controlHasError('date', 'invalidDateFormat') && !controlHasError('date', 'required')">
+                       El formato de fecha es incorrecto, debe ser fecha mes-dia-año 
+                    </mat-error>
+                    <mat-error *ngIf="controlHasError('date', 'invalidMonth') && !controlHasError('date', 'required')">
+                        El mes debe existir 
+                     </mat-error>
+                     <mat-error *ngIf="controlHasError('date', 'invalidDay') && !controlHasError('date', 'required')">
+                        El dia debe existir 
+                     </mat-error>
+                     <mat-error *ngIf="controlHasError('date', 'invalidYear') && !controlHasError('date', 'required')">
+                        El año debe ser valido 
+                     </mat-error>
+                </mat-form-field>
+            </div>
+
+                <div class="button-container">
+                    <button mat-raised-button class="custom-button" type="button" routerLink="/mensajes">
+                        Cancelar
+                    </button>
+                    <button mat-raised-button class="custom-button" type="submit" [disabled]="!form.valid">
+                        Agregar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

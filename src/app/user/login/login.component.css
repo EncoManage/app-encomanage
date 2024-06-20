@@ -9,7 +9,7 @@ body {
 }
 
 .left-side {
-    background-color: #FFA500;
+    background-color: #F6A13C;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -63,13 +63,13 @@ a:hover {
 .login-button {
     margin-top: 20px;
     padding: 15px;
-    background-color: #FFA500;
+    background-color: #F6A13C;
     color: #FFF9F2;
     font-size: 16px;
 }
 
 .login-button:hover {
-    background-color: #FFA500;
+    background-color: #F6A13C;
 }
 
 p {

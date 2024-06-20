@@ -1,51 +1,62 @@
-import { Component } from '@angular/core';
-import { AuthRequest } from '../interfaces/auth.interface';
+import { Component, OnInit } from '@angular/core';
+//import { AuthRequest } from '../interfaces/auth.interface';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginRequest } from '../interfaces/login-request.interface';
+import { LoginResponse } from '../interfaces/login-response.interface';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-
-  authRequest: any = {};
-
-  private email1: string = "consumidor@gmail.com";
-  private email2: string = "empresa@gmail.com";
+export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  passwordVisible = false;
-
   constructor(
+    private authService: AuthService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.pattern('^(.+)@(.+)$')]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
     });
   }
 
-  controlHasError(control: string, error: string): boolean {
-    return this.form.controls[control].hasError(error);
-  }
+  ngOnInit(): void {}
 
-  login() {
+  login(): void {
     if (this.form.invalid) {
       return;
     }
-    
-    const { email, password } = this.form.value;
 
-    if (email === this.email1 && password === "12345") {
-      this.router.navigate(['menus/consumidor']);
-    } else if (email === this.email2 && password === "67890") {
-      this.router.navigate(['menus/empresa']);
-    } else {
-      alert('Credenciales incorrectas. Inténtelo de nuevo. Prueba con el email:consumidor@gmail.com y contraseña:12345 para probar el perfil consumidor, o el email:empresa@gmail.com y contraseña:67890 para probar el perfil empresa');
-    }
+    const credentials: LoginRequest = this.form.value;
+
+    this.authService.login(credentials).subscribe({
+      next: (response: LoginResponse) => {
+       // this.authService.setLoggedIn(); // Almacenar estado de inicio de sesión en localStorage
+        this.showSnackBar('Inicio de sesión exitoso');
+        this.router.navigate(['/home']); // Redirigir a la página de inicio
+      },
+      error: (error) => {
+        console.error('Error en el inicio de sesión:', error);
+        this.showSnackBar('Error en el inicio de sesión. Por favor, intenta de nuevo.');
+      },
+    });
+  }
+
+  controlHasError(control: string, error: string) {
+    return this.form.controls[control].hasError(error);
+  }
+
+  private showSnackBar(message: string): void {
+    this.snackBar.open(message, 'Cerrar', {
+      duration: 3000,
+    });
   }
 }

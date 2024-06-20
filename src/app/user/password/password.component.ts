@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +15,8 @@ export class PasswordComponent {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar,
   ) {
     this.form = this.fb.group({
       codigo: ['', [Validators.required, Validators.minLength(4), this.onlyNumbersValidator]],
@@ -39,9 +41,17 @@ export class PasswordComponent {
     }
 
     if (this.form.value.codigo == this.codever.toString()) {
-      this.router.navigate(['home']);
+      this.router.navigate(['']);
+      this.showSnackBar('La contraseña fue actualizada');
     } else {
-      alert('Código incorrecto');
+      //alert('Código incorrecto');
+      this.showSnackBar('Código incorrecto. Por favor, ingrese un código válido.');
     }
+  }
+
+  private showSnackBar(message: string): void {
+    this.snackBar.open(message, 'Cerrar', {
+      duration: 3000,
+    });
   }
 }

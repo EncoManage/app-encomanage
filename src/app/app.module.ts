@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
 import { OrderService } from './services/order.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OrderService } from './services/order.service';
     AppRoutingModule,
     MaterialModule,
     HacerPedidoModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync(),
