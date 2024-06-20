@@ -13,17 +13,15 @@
           <mat-error *ngIf="controlHasError('email', 'required')">
             Este campo es obligatorio
           </mat-error>
-          <mat-error *ngIf="controlHasError('email', 'pattern')">
+          <mat-error *ngIf="controlHasError('email', 'email')">
             Ingrese un email válido
           </mat-error>
         </mat-form-field>
         <mat-form-field class="custom-form-field" appearance="outline">
           <mat-label>Contraseña</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
-          <input matInput [type]="passwordVisible ? 'text' : 'password'" placeholder="********" formControlName="password" required>
-          <mat-icon matSuffix (click)="passwordVisible = !passwordVisible">
-            {{ passwordVisible ? 'visibility_off' : 'visibility' }}
-          </mat-icon>
+          <input matInput type="password" placeholder="********" formControlName="password" required>
+          
           <mat-error *ngIf="controlHasError('password', 'required')">
             Este campo es obligatorio
           </mat-error>
@@ -31,7 +29,9 @@
             Ingrese una contraseña de al menos 4 caracteres.
           </mat-error>
         </mat-form-field>
+
         <p><a routerLink="/password">¿Olvidaste tu contraseña?</a></p>
+        
         <button class="login-button" mat-raised-button color="primary" [disabled]="!form.valid">
           Inicia sesión
         </button>
