@@ -3,7 +3,7 @@
 <!--Titulo e imagen-->
     <div class="titulo-container">
         <h1 class="titulo">Filtrar envíos</h1>
-        <img src="emb.jpg" class="logo">
+        <img src="..\assets\logo.PNG" class="logo">
     </div>
 <!--Texto Mensaje-->
     
@@ -12,29 +12,31 @@
 <!--Tipos de encomienda-->
     <div class="opciones-container">
         <!--Opcion1-->
+        
         <div class="pedido-boton1">
-            <div class="pedido-contenedor1">
-                <img src="embudo.jpg" class="pedido-img">
+            <button  class="pedido-contenedor1"(click)="irFiltrarPorFecha()">
+                
+                <img src="..\assets\calendario.png" class="pedido-img">
                 <div class="info-text-container">
                     <h1 class="pedido-mensaje">Fecha del Envío</h1>
                     <h1 class="desc-1">Puedes buscar tus envíos por orden de más recientes y más antiguos. También puedes buscar una fecha específica que tú decidas</h1>
                 </div>
-            </div>
+            </button>
         </div>
         <!--Opcion2-->
         <div class="pedido-boton2">
-            <div class="pedido-contenedor2">
-                <img src="embudo.jpg" class="pedido-img">
+            <button class="pedido-contenedor2"  (click)="irFiltrarPorTipo()">
+                <img src="..\assets\package.png" class="pedido-img">
                 <div class="info-text-container">
                     <h1 class="pedido-mensaje">Tipo de Encomienda </h1>
                     <h1 class="desc-1">Puedes buscar tus envios por los diferentes tipos de encomienda. Encomienda de comida, encomienda regular o mudanza. </h1>
                 </div>
-            </div>
+            </button>
         </div>
     </div>
 <!--Emoji Mensaje-->
     <div class="emoji-container">
-        <img src="emb.jpg" class="foto-emoji">
+        <img src="..\assets\nerd-face.png" class="foto-emoji">
         <div class="mensaje-container">
             <h1 class="mensaje1">Una vez selecciones una de estas opciones, el orden se actualizará en la lista de envíos.</h1>
         </div>

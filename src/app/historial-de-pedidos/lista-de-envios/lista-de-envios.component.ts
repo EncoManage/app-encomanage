@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './lista-de-envios.component.css'
 })
 export class ListaDeEnviosComponent {
+  constructor(private Router:Router){}
 
+  irAlMenu() {
+    this.Router.navigate(['/historial-de-pedidos/historial-menu']);
+  }
 }

@@ -8,6 +8,7 @@ import { FiltrarPedidosComponent } from './filtrar-pedidos/filtrar-pedidos.compo
 import { ListaActualizadaComponent } from './lista-actualizada/lista-actualizada.component';
 import { ListaDeEnviosComponent } from './lista-de-envios/lista-de-envios.component';
 import { DetallesDelEnvioComponent } from './detalles-del-envio/detalles-del-envio.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DetallesDelEnvioComponent } from './detalles-del-envio/detalles-del-env
   ],
   imports: [
     CommonModule,
-    HistorialDePedidosRoutingModule
+    HistorialDePedidosRoutingModule,
+    MatButtonModule
   ]
 })
 export class HistorialDePedidosModule { }

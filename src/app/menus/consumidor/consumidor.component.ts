@@ -19,6 +19,6 @@ export class ConsumidorComponent {
   }
 
   shipmentRecord(): void{
-    this.Router.navigate(['/hacer-pedido/create-order'])
+    this.Router.navigate(['/historial-de-pedidos/historial-menu'])
   }
 }
