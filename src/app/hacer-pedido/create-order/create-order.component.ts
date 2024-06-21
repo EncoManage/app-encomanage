@@ -32,9 +32,15 @@ export class CreateOrderComponent {
   }
 
   onSubmitOrder(): void{
-    this.orderService.setOrder(this.order);
-    console.log('Pedido creado: ', this.order);
-    this.router.navigate(['/hacer-pedido/order-confirmation']);
+    // this.orderService.setOrder(this.order);
+    // console.log('Pedido creado: ', this.order);
+    //this.router.navigate(['/hacer-pedido/order-confirmation']);
+    this.orderService.createOrder(this.order).subscribe(response => {
+      console.log('Pedido creado:', response);
+      this.router.navigate(['/hacer-pedido/order-confirmation']);
+    }, error => {
+      console.error('Error al crear el pedido:', error);
+    });
   }
   onInstruccionesEntrega() {
     this.router.navigate(['/hacer-pedido/instrucciones-entrega']);
