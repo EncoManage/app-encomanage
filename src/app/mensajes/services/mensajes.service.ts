@@ -21,7 +21,7 @@ export class MensajesService {
   //}
 
   getAllChats(cuentaId:number): Observable<ChatResponse[]> {
-    const url = `${this.baseUrl}/chats/cuentas/${cuentaId}`; 
+    const url = `${this.baseUrl}/cuentas/chats/${cuentaId}`; 
     return this.http.get<ChatResponse[]>(url);
   }
 
