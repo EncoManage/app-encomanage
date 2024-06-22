@@ -197,3 +197,10 @@ body {
     font-weight: bolder;
     font-size: 32px;
   }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

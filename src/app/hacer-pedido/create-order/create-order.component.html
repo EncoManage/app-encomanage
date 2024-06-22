@@ -10,10 +10,16 @@
         <div class="Direccion-Recogida">
             <h1>Ingresar la direccion de recogida</h1>
             <input type="text" [(ngModel)]="order.pickup_address" (input)="onInput()">
+            <div *ngIf="!isPickupAddressValid && order.pickup_address.length > 0" class="error-message">
+                Prefijo de vía no permitido. Use uno de los siguientes: {{ validTypesOfWays.join(', ') }}
+              </div>
         </div>
         <div class="Direccion-Entrega">
             <h1>Ingresar la direccion de entrega</h1>
             <input type="text" [(ngModel)]="order.shipping_address"  (input)="onInput()">
+            <div *ngIf="!isShippingAddressValid && order.shipping_address.length > 0" class="error-message">
+                Prefijo de vía no permitido. Use uno de los siguientes: {{ validTypesOfWays.join(', ') }}
+            </div>
         </div>
     </div>
     <a href="javascript:void(0)" [ngClass]="{'active': order.express_shipping}" (click)="onToggleExpressShipping()" class="button-Envio-Express">Activar Envio Express</a>

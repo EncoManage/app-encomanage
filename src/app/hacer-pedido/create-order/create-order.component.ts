@@ -12,17 +12,12 @@ export class CreateOrderComponent implements OnInit {
   order: OrderRequest;
   price: number = 0;
   isFormValid: boolean = false;
+  isPickupAddressValid: boolean = true;
+  isShippingAddressValid: boolean = true;
 
   // Definir las abreviaturas permitidas
   readonly validTypesOfWays = [
-    "AL", "AV", "BA", "CR", "CLL", "CA", "GA", "JR", "ML", "OV",
-     "PJE", "PL", "PQ", "PR", "PAS", "PZ", "CM", "CU", "SE", "PU", "BO",
-     "AL.", "AV.", "BA.", "CR.", "CLL.", "CA.", "GA.", "JR.", "ML.", "OV.",
-     "PJE.", "PL.", "PQ.", "PR.", "PAS.", "PZ.", "CM.", "CU.", "SE.", "PU.", "BO.",
-    "Al", "Av", "Ba", "Cr", "Cll", "Ca", "Ga", "Jr", "Ml", "Ov",
-     "Pje", "Pl", "Pq", "Pr", "Pas", "Pz", "Cm", "Cu", "Se", "Pu", "Bo",
-     "Al.", "Av.", "Ba.", "Cr.", "Cll.", "Ca.", "Ga.", "Jr.", "Ml.", "Ov.",
-     "Pje.", "Pl.", "Pq.", "Pr.", "Pas.", "Pz.", "Cm.", "Cu.", "Se.", "Pu.", "Bo."
+    "AL", "AV", "BA", "CR", "CLL", "CA", "GA", "JR", "ML", "OV", "PJE", "PL", "PQ", "PR", "PAS", "PZ", "CM", "CU", "SE", "PU", "BO"
   ];
 
   constructor(private orderService: OrderService, private router: Router) {
@@ -57,9 +52,9 @@ export class CreateOrderComponent implements OnInit {
   }
 
   checkFormValidity(): void {
-    const isPickupAddressValid = this.isValidAddress(this.order.pickup_address);
-    const isShippingAddressValid = this.isValidAddress(this.order.shipping_address);
-    this.isFormValid = isPickupAddressValid && isShippingAddressValid && !!this.order.tipo_encomienda;
+    this.isPickupAddressValid = this.isValidAddress(this.order.pickup_address);
+    this.isShippingAddressValid = this.isValidAddress(this.order.shipping_address);
+    this.isFormValid = this.isPickupAddressValid && this.isShippingAddressValid && !!this.order.tipo_encomienda;
     if (this.isFormValid) {
       this.updatePrice();
     }
