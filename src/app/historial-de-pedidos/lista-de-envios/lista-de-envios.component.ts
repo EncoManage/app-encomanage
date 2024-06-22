@@ -29,14 +29,14 @@ export class ListaDeEnviosComponent {
 
   ngOnInit(): void {
     this.updateList();
-   // this.orders = [
-   //   {
-     //   shipping_address: 'aaaa',
-     //   pickup_address: 'bbb',
+  // this.orders = [
+ //   {
+   //     shipping_address: 'nenb',
+    //   pickup_address: 'san borja',
     //    express_shipping: false,
     //    tipo_encomienda: 'cccc'
-     // }, 
-    //];
+   //   }, 
+  //  ];
   }
     onSelectOrder(order: OrderRequest): void {
       this.selectedOrder = order;

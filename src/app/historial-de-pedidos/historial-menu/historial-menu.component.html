@@ -46,8 +46,10 @@
             <div class="pedido-contenedor" *ngIf="(order && (order?.pickup_address != '') )">
                 <img src="..\assets\package.png" class="pedido-img">
                 <div class="info-text-container">
-                    <h1 class="pedido-mensaje"> {{order.shipping_address}}</h1>
+                    <h1 class="pedido-mensaje"> {{order.pickup_address}}</h1>
                     <h1 class="desc-1"> Tipo de Encomienda: {{order.tipo_encomienda }}</h1>
+                    <h1 class="desc-1">Actualmente en: {{order.pickup_address}}</h1>
+                    <h1 class="desc-1">Tiempo estimado: 31 minutos</h1>
                 </div>
             </div>
             <div class="pedido-contenedor" *ngIf="(order?.shipping_address == '')">
@@ -55,6 +57,9 @@
                 <div class="info-text-container">
                     <h1 class="pedido-mensaje">Por favor seleccione un envío...</h1>
                     <h1 class="desc-1">Tipo de encomienda: ...</h1>
+                    <h1 class="desc-1">Actualmente en: ...</h1>
+                    <h1 class="desc-1">Tiempo estimado: ...</h1>
+                    
                 </div>
             </div>
         </div>

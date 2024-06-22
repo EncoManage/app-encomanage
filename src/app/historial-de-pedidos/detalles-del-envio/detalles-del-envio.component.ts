@@ -19,8 +19,12 @@ export class DetallesDelEnvioComponent implements OnInit {
     const index = +this.route.snapshot.paramMap.get('index')!;
     this.order = this.orderService.getOrderDetails(index);
     this.order = this.orderService.getOrder();
+    this.instrucciones = this.orderService.getInstrucciones(); 
   }
   getTheOrder():void{
     this.order = this.orderService.getOrder();
+  }
+  getInstruc(){
+    this.orderService.getInstrucciones();
   }
 }

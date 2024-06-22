@@ -28,12 +28,12 @@
                      </div>
                     <ul class="lista">
                       <li *ngFor="let order of orders" (click)="onSelectOrder(order)">
-                        {{ order.shipping_address }}
+                        {{ order.pickup_address }}
                       </li>
                     </ul>
                   
                     <div class="mensajeA" *ngIf="selectedOrder" font color="green">
-                      <p>Usted selecciona </p> <p>: {{ selectedOrder.shipping_address }}</p>
+                      <p>Usted selecciona </p> <p>: {{ selectedOrder.pickup_address }}</p>
                       
 
                     </div>

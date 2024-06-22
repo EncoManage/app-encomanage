@@ -33,19 +33,3 @@
     </div>
     </div>
 </div>
-<h2>Order List</h2>
-  <ul>
-    <li *ngFor="let order of orders" (click)="onSelectOrder(order)">
-      {{ order.shipping_address }}
-    </li>
-  </ul>
-
-  <div *ngIf="selectedOrder">
-    <h3>Selected Order Details</h3>
-    <p><strong>Shipping Address:</strong> {{ selectedOrder.shipping_address }}</p>
-    <p><strong>Pickup Address:</strong> {{ selectedOrder.pickup_address }}</p>
-    <p><strong>Express Shipping:</strong> {{ selectedOrder.express_shipping ? 'Yes' : 'No' }}</p>
-    <p><strong>Tipo Encomienda:</strong> {{ selectedOrder.tipo_encomienda }}</p>
-    <p><strong>Instrucciones:</strong> {{ instrucciones }}</p>
-  </div>
-</body>

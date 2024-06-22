@@ -25,7 +25,7 @@ export class FiltrarPedidosComponent {
   
   sortAalaZ(): void {
     //this.orders.sort();
-    this.orders.sort((a, b) => a.shipping_address.localeCompare(b.shipping_address));
+    this.orders.sort((a, b) => a.pickup_address.localeCompare(b.pickup_address));
     console.log("Sorted orders (false first):", this.orders);
     this.Router.navigate(['/historial-de-pedidos/lista-actualizada']);
   }
