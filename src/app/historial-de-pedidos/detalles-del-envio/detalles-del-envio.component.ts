@@ -9,6 +9,7 @@ import { OrderRequest } from '../../hacer-pedido/model/order-request.model';
 })
 export class DetallesDelEnvioComponent implements OnInit {
   order: OrderRequest | null = null;
+  instrucciones: string = '';
   selectedOrder: OrderRequest | null = null;
   constructor(private route: ActivatedRoute, private orderService: OrderService) {
     

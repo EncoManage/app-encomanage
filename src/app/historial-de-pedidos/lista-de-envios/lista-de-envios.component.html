@@ -21,20 +21,21 @@
             <!--Lista-->
             <div class="selec-pedido-container">
                 <div class="selec-pedido">
-                    <h2>Order List</h2>
+                    <div *ngIf="(order && (order?.pickup_address != '') )">
+                     </div>
+                     <div *ngIf="(order?.pickup_address == '')">
+                         <p>Seleccione un envío dandole click. (Si no hay envíos, cree uno)</p>
+                     </div>
                     <ul class="lista">
                       <li *ngFor="let order of orders" (click)="onSelectOrder(order)">
                         {{ order.shipping_address }}
                       </li>
                     </ul>
                   
-                    <div *ngIf="selectedOrder" font color="green">
-                      <h3>Selected Order Details</h3> <p>{{ selectedOrder.shipping_address }}</p>
-                      <p><strong>Shipping Address:</strong> {{ selectedOrder.shipping_address }}</p>
-                      <p><strong>Pickup Address:</strong> {{ selectedOrder.pickup_address }}</p>
-                      <p><strong>Express Shipping:</strong> {{ selectedOrder.express_shipping ? 'Yes' : 'No' }}</p>
-                      <p><strong>Tipo Encomienda:</strong> {{ selectedOrder.tipo_encomienda }}</p>
-                      <p><strong>Instrucciones:</strong> {{ instrucciones }}</p>
+                    <div class="mensajeA" *ngIf="selectedOrder" font color="green">
+                      <p>Usted selecciona </p> <p>: {{ selectedOrder.shipping_address }}</p>
+                      
+
                     </div>
                 </div>
             </div>

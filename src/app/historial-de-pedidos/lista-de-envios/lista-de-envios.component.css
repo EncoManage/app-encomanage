@@ -81,6 +81,7 @@
     align-items: center;
     display: flex;
     margin: auto;
+    
 }
 .selec-pedido-container{
     width: 820px;
@@ -88,14 +89,16 @@
     border-radius: 20px;
     background-color: #131313;
     text-decoration: none;
-    display: flex;
+    display: block;
     margin: auto;
     align-items: center;  
+    
     
 }
 .selec-pedido{
     padding: 20px;
     color: white;
+    
     
 }
 
@@ -107,6 +110,7 @@
     background-color: #FFD5A5;
     text-decoration: none;
     margin: auto;
+   
     
     
 }
@@ -120,6 +124,9 @@
     margin: auto;
    
     
+}
+.mensajeA{
+    display: flex;
 }
 .mensaje-update-container2{
     /*overflow: hidden;*/

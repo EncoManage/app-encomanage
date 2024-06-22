@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-
-import { OrderService } from '../../services/order.service';
+import { ActivatedRoute } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { OrderService } from '../../services/order.service';
+import { OrderRequest } from '../../hacer-pedido/model/order-request.model';
 
 @Component({
   selector: 'app-historial-menu',
@@ -13,10 +14,11 @@ import {MatButtonModule} from '@angular/material/button';
   
 })
 export class HistorialMenuComponent {
-  constructor(private Router:Router, private orderService: OrderService){ }
-
+  constructor(private Router:Router, private orderService: OrderService, private route: ActivatedRoute){ }
+  order: OrderRequest | null = null;
+  selectedOrder: OrderRequest | null = null;
   resetOrder(){
-    
+
   }
   irFiltrarPedidos() {
     this.Router.navigate(['/historial-de-pedidos/filtrar-pedidos']);
@@ -26,5 +28,13 @@ export class HistorialMenuComponent {
   }
   irListaDeEnvios() {
     this.Router.navigate(['/historial-de-pedidos/lista-de-envios']);
+  }
+  ngOnInit(): void {
+    const index = +this.route.snapshot.paramMap.get('index')!;
+    this.order = this.orderService.getOrderDetails(index);
+    this.order = this.orderService.getOrder();
+  }
+  getTheOrder():void{
+    this.order = this.orderService.getOrder();
   }
 }

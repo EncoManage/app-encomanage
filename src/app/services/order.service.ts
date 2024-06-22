@@ -6,6 +6,7 @@ import { OrderRequest } from '../hacer-pedido/model/order-request.model';
 })
 export class OrderService {
   private orders: OrderRequest[] = [];
+  private instruccionesAr: string[] = [];
 
   private order: OrderRequest = {
     shipping_address: '',
@@ -31,11 +32,15 @@ export class OrderService {
   getInstrucciones(): string {
     return this.instrucciones;
   }
+ 
   addOrder(order: OrderRequest) {
     this.orders.push(order);
   }
   getOrders(): OrderRequest[] {
     return this.orders;
+  }
+  getInstruccionesAr(): string[]{
+    return this.instruccionesAr;
   }
   
   getOrderDetails(index: number): OrderRequest | null {
@@ -43,5 +48,8 @@ export class OrderService {
   }
   getOrderCount(): number {
     return this.orders.length;
+  }
+  addInstruccion(instruccion: string) {
+    this.instruccionesAr.push(instruccion);
   }
 }
