@@ -9,11 +9,11 @@
     <div class="Direcciones">
         <div class="Direccion-Recogida">
             <h1>Ingresar la direccion de recogida</h1>
-            <input type="text" [(ngModel)]="order.pickup_address" (input)="checkFormValidity()">
+            <input type="text" [(ngModel)]="order.pickup_address" (input)="onInput()">
         </div>
         <div class="Direccion-Entrega">
             <h1>Ingresar la direccion de entrega</h1>
-            <input type="text" [(ngModel)]="order.shipping_address"  (input)="checkFormValidity()">
+            <input type="text" [(ngModel)]="order.shipping_address"  (input)="onInput()">
         </div>
     </div>
     <a href="javascript:void(0)" [ngClass]="{'active': order.express_shipping}" (click)="onToggleExpressShipping()" class="button-Envio-Express">Activar Envio Express</a>
@@ -23,12 +23,17 @@
         <h1>¿No puede encontrar alguna direccion?</h1>
         <h2>!Ubiquela en nuestro nuevo mapa interactivo!</h2>
         <div class="Butones Derecha">
-            <a href="javascript:void(0)" class="button-Mapa-Interactivo">Entrar al Mapa Interactivo</a>
+            <a href="javascript:void(0)" class="button-Mapa-Interactivo">Entrar al Mapa Interactivo
+                <span class="tooltip-text">Próximamente</span>
+            </a>
             <button href="javascript:void(0)"  
                 class="button-Crear-Pedido"
                 [ngClass]="{'disabled': !isFormValid}" 
                 (click)="onSubmitOrder()"
                 [disabled]="!isFormValid">Crear Pedido</button>
+                <div class="Precio">
+                    <h3>Precio: {{ price }} Soles</h3>
+                </div>
         </div>
     </div>
     </div>

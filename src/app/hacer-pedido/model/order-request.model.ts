@@ -3,4 +3,5 @@ export interface OrderRequest{
     pickup_address: string;
     express_shipping: boolean;
     tipo_encomienda: string;
+    price: number;
 }

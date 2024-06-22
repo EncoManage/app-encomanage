@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
 export class OrderConfirmationComponent implements OnInit{
   order: OrderRequest;
   instrucciones: string;
+  price: number;
 
   constructor(private orderService: OrderService, private router: Router) {
     this.order = this.orderService.getOrder();
     this.instrucciones = this.orderService.getInstrucciones();
+    this.price = this.orderService.getPrice();
   }
 
   ngOnInit(): void {}
