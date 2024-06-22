@@ -9,7 +9,16 @@
     <div class="descripcion-localizacion-container">
          <!--Descripcionn-->
         <div class="descripcion-container"> 
-            <h1 class="descripcion-text">Por favor seleccione un envío...</h1>
+            <h2>Detalles Completos:</h2>
+            <div *ngIf="(order && (order?.pickup_address != '') )">
+                <p>Dirección de recogida: {{order.pickup_address}}</p>
+                <p>Dirección de llegada: {{order.shipping_address}}</p>
+                <p>Envío express: {{order.express_shipping ? 'Sí' : 'No'}}</p>
+                <p>Tipo Encomienda: {{order.tipo_encomienda}}</p>
+            </div>
+            <div *ngIf="(order?.pickup_address == '')">
+                 <p>Por favor seleccione un envío...</p>
+            </div>
         </div>
         <!--Localizacion-->
         <div class="localizacion-container"> 
@@ -17,11 +26,14 @@
                 <h1 class="recogida-text">Dirección de recogida:</h1>
                 <h1 class="recogida-output">Por favor seleccione un envío...</h1>
             </div>
-            <div class="direccion-entrega"> 
+            <div class="direccion-entrega" > 
                 <h1 class="entrega-text">Dirección de entrega:</h1>
                 <h1 class="entrega-output">Por favor seleccione un envío...</h1>
             </div>
         </div>
+        <button (click)="getTheOrder()">
+            <p>actualizar</p>
+        </button>
     </div>
-
+   
 </body>

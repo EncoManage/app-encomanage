@@ -22,4 +22,8 @@ export class OrderConfirmationComponent implements OnInit{
   volverAlMenu(): void {
     this.router.navigate(['/home']);
   }
+  confirmOrder(): void {
+    this.orderService.addOrder(this.order);
+    this.volverAlMenu();
+  }
 }

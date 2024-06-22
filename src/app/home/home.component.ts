@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderRequest } from '../hacer-pedido/model/order-request.model';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +10,19 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   selectedProfile: string | null = null;
-
-  constructor(private router: Router) {}
-
-  selectProfile(profile: string) {
+  newOrder: OrderRequest = {
+    shipping_address: '',
+    pickup_address: '',
+    express_shipping: false,
+    tipo_encomienda: ''
+  };
+  constructor(private router: Router, private orderService: OrderService) {
+    this.orderService.setOrder(this.newOrder);
+  }
+  OnInit(){
+    this.orderService.setOrder(this.newOrder);
+  }
+  selectProfile(profile: string ) {
     this.selectedProfile = profile;
   }
 

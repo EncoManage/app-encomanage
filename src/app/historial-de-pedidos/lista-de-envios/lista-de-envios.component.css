@@ -77,7 +77,8 @@
     margin: auto;
 }
 .contenedor-lista-cont{
-   
+    
+    align-items: center;
     display: flex;
     margin: auto;
 }
@@ -89,19 +90,66 @@
     text-decoration: none;
     display: flex;
     margin: auto;
+    align-items: center;  
+    
+}
+.selec-pedido{
+    padding: 20px;
+    color: white;
+    
 }
 
 .mensaje-continuar-container{
     /*overflow: hidden;*/
-    width: 620px;
+    display: block;
     height: 80px;
     border-radius: 20px;
     background-color: #FFD5A5;
     text-decoration: none;
     margin: auto;
+    
+    
+}
+.mensaje-update-container{
+    /*overflow: hidden;*/
+    width: 640px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #FFD5A5;
+    text-decoration: none;
+    margin: auto;
+   
+    
+}
+.mensaje-update-container2{
+    /*overflow: hidden;*/
+    width: 640px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #FFD5A5;
+    text-decoration: none;
+    margin: auto;
+    
+    padding: 10px;
+    
+}
+.separador{
+    padding-top: 10px;
 }
 .mensaje-continuar{
-    padding-top: 10px;
+    width: 600px;
+    color: #4B5981;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: 45px;
+    
+  
+}
+.mensaje-update{
+    
     color: #4B5981;
     margin: auto;
     font-family: "Poppins", sans-serif;
@@ -110,4 +158,10 @@
     line-height: 1.4;
     font-size: 45px;
     margin: auto;
+}
+.botones{
+    display: block;
+    margin: auto;
+    
+
 }

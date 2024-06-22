@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+
+import { OrderService } from '../../services/order.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
@@ -11,9 +13,11 @@ import {MatButtonModule} from '@angular/material/button';
   
 })
 export class HistorialMenuComponent {
-  constructor(private Router:Router){ }
+  constructor(private Router:Router, private orderService: OrderService){ }
 
-
+  resetOrder(){
+    
+  }
   irFiltrarPedidos() {
     this.Router.navigate(['/historial-de-pedidos/filtrar-pedidos']);
   }
