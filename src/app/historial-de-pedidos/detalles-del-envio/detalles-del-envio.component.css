@@ -29,6 +29,10 @@
     border-radius: 20px;
     margin: auto;
 }
+.order{
+    display: block;
+    margin: auto;
+}
 .imagen{
     
     color: #000000;
@@ -41,6 +45,7 @@
 }
 .descripcion-localizacion-container{
     display: flex;
+    padding-top: 40px;
 }
 .descripcion-container{
     background-color:#FFF5F2;
@@ -62,6 +67,7 @@
     height: 325px;
     width: 600px;
     border-radius: 20px;
+    
 }
 .direccion-recogida{
     text-align: center;
@@ -91,4 +97,30 @@
 .entrega-output{
     font-family: "Poppins", sans-serif;
     font-size: 20px;
+}
+.mensaje-container{
+    
+    /*overflow: hidden;*/
+    width: 600px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #FFD5A5;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+.mensaje1{
+    
+    color: #4B5981;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4;
+    font-size: 45px;
+    
+}
+.boton-div{
+    padding-top: 40px;
 }

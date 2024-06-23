@@ -39,6 +39,7 @@
         <div class="mensaje-container">
             <h1 class="mensaje1">Envío Seleccionado</h1>
         </div>
+       
         <!--Info-->
         <div class="pedido-boton">
             
@@ -49,7 +50,10 @@
                     <h1 class="pedido-mensaje"> {{order.pickup_address}}</h1>
                     <h1 class="desc-1"> Tipo de Encomienda: {{order.tipo_encomienda }}</h1>
                     <h1 class="desc-1">Actualmente en: {{order.pickup_address}}</h1>
-                    <h1 class="desc-1">Tiempo estimado:  {{ displayTime }}</h1>
+                    <div class="timer">
+                        <h1 class="desc-1">Tiempo estimado:  {{ countdownDisplay }}</h1>
+                        <img class="timer-image" src="..\assets\timer.png" (click)="delayOrder()">
+                    </div>
                 </div>
             </div>
             <div class="pedido-contenedor" *ngIf="(order?.shipping_address == '')">

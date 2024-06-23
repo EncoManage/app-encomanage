@@ -21,6 +21,7 @@
                      <p>Tipo Encomienda: {{order.tipo_encomienda}}</p>
                      <p>Instrucciones: {{order.instrucciones}} </p>
                      <p>Precio: {{order.price}} soles</p>
+                     <p>Tiempo transcurrido: {{countupDisplay}}</p>
                   </div>
                   <div *ngIf="(order?.pickup_address == '')">
                       <p>Por favor seleccione un envío...</p>
@@ -28,6 +29,7 @@
              </div>
         </div>
         <!--Localizacion-->
+        <div class="order">
         <div class="localizacion-container"> 
             <div class="direccion-recogida"> 
                 <h1 class="recogida-text">Dirección de recogida:</h1>
@@ -49,7 +51,12 @@
                  </div>
             </div>
         </div>
-        
+        <div class="boton-div">
+            <button mat-raised-button class="mensaje-container" (click)="irAlMenu()">
+            <h1 class="mensaje1">CONTINUAR</h1>
+            </button>
+        </div>
+         </div>
     </div>
    
 </body>

@@ -98,4 +98,8 @@ export class OrderService {
   getAllOrders(): Observable<OrderRequest[]> {
     return this.http.get<OrderRequest[]>(this.apiUrl);
   }
+  sendOrdersToApi(orders: OrderRequest[]): Observable<OrderRequest[]> {
+    // Assuming the API expects to receive the updated orders and returns them back
+    return this.http.post<OrderRequest[]>(this.apiUrl + '/update', orders);
+  }
 }
