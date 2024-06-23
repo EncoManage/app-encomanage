@@ -48,7 +48,7 @@
 }
 
 .opciones-container{
-    display:inline-flex;
+   
     justify-content: space-between;
     display: flex;
     margin:auto;
@@ -56,14 +56,14 @@
 
 .pedido-boton1{
     
-    overflow: hidden;
+    
     margin: auto;
    
     height: 240px;
 }
 .pedido-boton2{
     
-    padding-left: 250px;
+    padding-left: 50px;
     overflow: hidden;
     margin: auto;
    

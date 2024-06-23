@@ -49,7 +49,7 @@
                     <h1 class="pedido-mensaje"> {{order.pickup_address}}</h1>
                     <h1 class="desc-1"> Tipo de Encomienda: {{order.tipo_encomienda }}</h1>
                     <h1 class="desc-1">Actualmente en: {{order.pickup_address}}</h1>
-                    <h1 class="desc-1">Tiempo estimado: 31 minutos</h1>
+                    <h1 class="desc-1">Tiempo estimado:  {{ displayTime }}</h1>
                 </div>
             </div>
             <div class="pedido-contenedor" *ngIf="(order?.shipping_address == '')">

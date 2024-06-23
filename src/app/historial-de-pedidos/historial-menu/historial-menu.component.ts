@@ -6,6 +6,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { OrderService } from '../../services/order.service';
 import { OrderRequest } from '../../hacer-pedido/model/order-request.model';
+import {addSeconds, format} from "date-fns";
 
 @Component({
   selector: 'app-historial-menu',
@@ -17,6 +18,9 @@ export class HistorialMenuComponent {
   constructor(private Router:Router, private orderService: OrderService, private route: ActivatedRoute){ }
   order: OrderRequest | null = null;
   selectedOrder: OrderRequest | null = null;
+  estimatedTime: number = 0;
+  timer: any;
+  displayTime: string = '00:00:00';
   resetOrder(){
 
   }
@@ -38,8 +42,39 @@ export class HistorialMenuComponent {
     }, error => {
       console.error('Error al obtener detalles del pedido:', error);
     });
+
+    this.setRandomTime();
+    this.startTimer();
   }
   getTheOrder():void{
     this.order = this.orderService.getOrder();
   }
+
+  setRandomTime(): void {
+    this.estimatedTime = Math.floor(Math.random() * (70 - 20 + 1)) + 20;
+    this.displayTime = this.formatTime(this.estimatedTime * 60); // Convert to seconds
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.timer);
+  }
+  
+
+  startTimer(): void {
+    this.timer = setInterval(() => {
+      if (this.estimatedTime > 0) {
+        this.estimatedTime--;
+        this.displayTime = this.formatTime(this.estimatedTime);
+      } else {
+        clearInterval(this.timer);
+      }
+    }, 1000); // Decrease every second
+  }
+
+  formatTime(seconds: number): string {
+    const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+    const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+    const secs = (seconds % 60).toString().padStart(2, '0');
+    return `${hours}:${minutes}:${secs}`;
+  }
+  
 }

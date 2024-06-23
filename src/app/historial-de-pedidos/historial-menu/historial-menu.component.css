@@ -131,6 +131,7 @@
     border-radius: 20px;
     width: 620px;
     height: 280px;
+    
 }
 .info-text-container{
     display: block;
@@ -146,18 +147,19 @@
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     line-height: 1.4;
+    display: block;
     
 }
 .desc-1{
     font-size: 15px;
     color: #000000;
     
-    width: 300px;
+    padding-bottom: 10px;
     height: 10px;
     text-align: left;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    
+    display: block;
     
 }
 .pedido-img{
