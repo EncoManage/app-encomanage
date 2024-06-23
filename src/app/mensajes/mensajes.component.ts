@@ -102,7 +102,7 @@ export class MensajesComponent implements OnInit {
   }
 
   viewChatDetails(): void {
-    this.router.navigate(['/detalle-chat']);
+    this.router.navigate(['/mensajes/detalle-chat']);
   }
 
   addNewChat(): void{
