@@ -1,3 +1,4 @@
+import { OrderRequest } from './../hacer-pedido/model/order-request.model';
 
 
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -5,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { OrderRequest } from '../hacer-pedido/model/order-request.model';
+
 import { OrderService } from '../services/order.service';
 
 @Component({
@@ -16,19 +17,20 @@ import { OrderService } from '../services/order.service';
 export class HomeComponent {
   selectedProfile: string | null = null;
 
-  constructor(private router: Router, private snackBar: MatSnackBar) {}
+  constructor(private router: Router, private snackBar: MatSnackBar,private orderService: OrderService ) {
+    this.orderService.setOrder(this.newOrder);
+  }
 
-  selectProfile(profile: string) {
+ 
 
   newOrder: OrderRequest = {
     shipping_address: '',
     pickup_address: '',
     express_shipping: false,
-    tipo_encomienda: ''
+    tipo_encomienda: '',
+    price: 0,
   };
-  constructor(private router: Router, private orderService: OrderService) {
-    this.orderService.setOrder(this.newOrder);
-  }
+ 
   OnInit(){
     this.orderService.setOrder(this.newOrder);
   }
@@ -56,3 +58,4 @@ export class HomeComponent {
     });
   }
 }
+

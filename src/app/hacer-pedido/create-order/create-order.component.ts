@@ -32,14 +32,16 @@ export class CreateOrderComponent implements OnInit {
 
     console.log('Seleccionar Tipo de Encomienda clicado');
     this.router.navigate(['/hacer-pedido/seleccionar-encomienda']);
-    orders: z[] = [];
-    newOrder: OrderRequest = {
+    orders: [] = [];
+    newOrders: OrderRequest = {
       shipping_address: '',
      pickup_address: '',
       express_shipping: false,
-      tipo_encomienda: ''
+      tipo_encomienda: '',
+      price: 0,
      }
   }
+  orders: OrderRequest | null = null;
   selectedOrder: OrderRequest | null = null;
   instrucciones: string = '';
 
@@ -69,21 +71,14 @@ export class CreateOrderComponent implements OnInit {
         shipping_address: '',
         pickup_address: '',
         express_shipping: false,
-        tipo_encomienda: ''
+        tipo_encomienda: '',
+        price: 0
       },
     ];
   }
-  checkFormValidity(): void {
-    this.isFormValid = !!this.order.pickup_address && !!this.order.shipping_address && !!this.order.tipo_encomienda;
-  }
+  
 
-  onSubmitOrder(): void{
-    this.orderService.setOrder(this.order);
-    this.addOrder();
-    console.log('Pedido creado: ', this.order);
-    this.router.navigate(['/hacer-pedido/order-confirmation']);
 
-  }
 
   checkFormValidity(): void {
     this.isPickupAddressValid = this.isValidAddress(this.order.pickup_address);
@@ -99,6 +94,8 @@ export class CreateOrderComponent implements OnInit {
   }
 
   onSubmitOrder(): void {
+    this.orderService.setOrder(this.order);
+    this.addOrder();
     this.order.price = this.price; // Asegurarse de que el precio se incluye en la orden
     this.orderService.createOrder(this.order).subscribe(response => {
       console.log('Pedido creado:', response);
@@ -134,3 +131,4 @@ export class CreateOrderComponent implements OnInit {
   }
   
 }
+
