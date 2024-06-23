@@ -11,7 +11,7 @@ import { Z } from '@angular/cdk/keycodes';
 export class FiltrarPedidosComponent {
   constructor(private Router: Router, private orderService: OrderService){
     this.order = this.orderService.getOrder();
-    this.orders = this.orderService.getOrders();
+    this.orders = this.orderService.getOrderss();
     
   }
   ngOnInit(): void {

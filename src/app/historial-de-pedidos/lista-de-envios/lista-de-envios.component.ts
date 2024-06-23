@@ -23,7 +23,7 @@ export class ListaDeEnviosComponent {
 
   constructor(private orderService: OrderService, private router: Router) { 
     this.order = this.orderService.getOrder();
-    this.orders = this.orderService.getOrders();
+    this.orders = this.orderService.getOrderss();
     this.instrucciones = this.orderService.getInstrucciones();
   }
 
@@ -48,7 +48,7 @@ export class ListaDeEnviosComponent {
       this.router.navigate(['/detalles-del-envio', index]);
     }
     updateList() :void{
-      this.orders = this.orderService.getOrders();
+      this.orders = this.orderService.getOrderss();
     }
     getOrdersCount(){
       return this.orders.length;

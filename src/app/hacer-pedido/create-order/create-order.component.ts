@@ -24,24 +24,32 @@ export class CreateOrderComponent implements OnInit {
   constructor(private orderService: OrderService, private router: Router) {
     this.order = this.orderService.getOrder();
   }
-
-
-
+ 
+  orders: OrderRequest[] = [];
+  newOrder: OrderRequest = {
+    shipping_address: '',
+    pickup_address: '',
+    express_shipping: false,
+    tipo_encomienda: '',
+    price:0,
+  };
   
   onSelectEncomienda():void{
 
     console.log('Seleccionar Tipo de Encomienda clicado');
     this.router.navigate(['/hacer-pedido/seleccionar-encomienda']);
-    orders: [] = [];
-    newOrders: OrderRequest = {
-      shipping_address: '',
-     pickup_address: '',
-      express_shipping: false,
-      tipo_encomienda: '',
-      price: 0,
-     }
+    
+    //orders: [] = [];
   }
-  orders: OrderRequest | null = null;
+    newOrders: OrderRequest = {
+       shipping_address: '',
+       pickup_address: '',
+       express_shipping: false,
+      tipo_encomienda: '',
+      price: 0
+     }
+  
+  
   selectedOrder: OrderRequest | null = null;
   instrucciones: string = '';
 
@@ -113,15 +121,18 @@ export class CreateOrderComponent implements OnInit {
       shipping_address: this.order.shipping_address,
       pickup_address: this.order.pickup_address,
       express_shipping: this.order.express_shipping,
-      tipo_encomienda: this.order.tipo_encomienda 
+      tipo_encomienda: this.order.tipo_encomienda,
+      price: this.order.price
     };
     this.orderService.addOrder(this.newOrder);
-    this.orders = this.orderService.getOrders(); // Refresh the list
+    this.orders = this.orderService.getOrderss(); // Refresh the list
     this.newOrder = {
       shipping_address: '',
       pickup_address: '',
       express_shipping: false,
-      tipo_encomienda: 'z' 
+      tipo_encomienda: '',
+      price:0, 
+
     }; // Reset the form
   }
   onSelectOrder(order: OrderRequest): void {
