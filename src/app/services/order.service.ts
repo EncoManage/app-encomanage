@@ -7,29 +7,25 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
-
   private apiUrl = 'http://localhost:3000/orders';
-
-  private orders: OrderRequest[] = [];
-  private instruccionesAr: string[] = [];
-
 
   private order: OrderRequest = {
     shipping_address: '',
     pickup_address: '',
     express_shipping: false,
     tipo_encomienda: '',
-    price: 0
+    price: 0,
+    instrucciones: ''
   };
 
-  private instrucciones: string = '';
-  private randomValue: number = Math.floor(Math.random() * 100) + 1;
-
+  private orders: OrderRequest[] = [];
   constructor(private http: HttpClient) {}
 
-  
+  private randomValue: number = Math.floor(Math.random() * 100) + 1;
+
   setOrder(order: OrderRequest) {
     this.order = order;
+    this.calculatePrice(order.express_shipping);
   }
 
   getOrder(): OrderRequest {
@@ -37,16 +33,11 @@ export class OrderService {
   }
 
   setInstrucciones(instrucciones: string) {
-    this.instrucciones = instrucciones;
+    this.order.instrucciones = instrucciones;
   }
 
   getInstrucciones(): string {
-    return this.instrucciones;
-  }
-
-
-  getOrders(): Observable<OrderRequest[]> {
-    return this.http.get<OrderRequest[]>(this.apiUrl);
+    return this.order.instrucciones;
   }
 
   setPrice(price: number) {
@@ -59,6 +50,7 @@ export class OrderService {
 
   calculatePrice(expressShipping: boolean): number {
     let basePrice = 0;
+   
 
     if (this.order.tipo_encomienda === 'Mudanza') {
       basePrice = 500 + this.randomValue;
@@ -79,25 +71,31 @@ export class OrderService {
   createOrder(order: OrderRequest): Observable<OrderRequest> {
     return this.http.post<OrderRequest>(this.apiUrl, order);
   }
- 
-  addOrder(order: OrderRequest) {
-    this.orders.push(order);
-  }
-  getOrderss(): OrderRequest[] {
-    return this.orders;
-  }
-  getInstruccionesAr(): string[]{
-    return this.instruccionesAr;
-  }
-  
-  getOrderDetails(index: number): OrderRequest | null {
-    return this.orders[index] || null;
-  }
-  getOrderCount(): number {
-    return this.orders.length;
-  }
-  addInstruccion(instruccion: string) {
-    this.instruccionesAr.push(instruccion);
 
+  addOrder(order: OrderRequest): void {
+    this.createOrder(order).subscribe(response => {
+      console.log('Order added:', response);
+    });
+  }
+
+  getOrders(): Observable<OrderRequest[]> {
+    return this.http.get<OrderRequest[]>(this.apiUrl);
+  }
+
+  getOrderss(): OrderRequest[] {
+    return [this.order];
+  }
+  addInstruccion(instruccion: string): void {
+    this.order.instrucciones = instruccion;
+  }
+  // getOrderDetails(index: number): OrderRequest | null {
+  //   return this.orders[index] || null;
+  // }
+  getOrderDetails(orderId: number): Observable<OrderRequest> {
+    return this.http.get<OrderRequest>(`${this.apiUrl}/${orderId}`);
+  }
+
+  getAllOrders(): Observable<OrderRequest[]> {
+    return this.http.get<OrderRequest[]>(this.apiUrl);
   }
 }

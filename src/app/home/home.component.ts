@@ -29,6 +29,7 @@ export class HomeComponent {
     express_shipping: false,
     tipo_encomienda: '',
     price: 0,
+    instrucciones: ''
   };
  
   OnInit(){

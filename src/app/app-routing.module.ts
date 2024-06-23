@@ -9,7 +9,8 @@ const routes: Routes = [
  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
  { path: '', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
  { path: 'menus', loadChildren: () => import('./menus/menus.module').then(m => m.MenusModule), canActivate: [authGuard] },
- { path: 'mensajes', loadChildren: () => import('./mensajes/mensajes.module').then(m => m.MensajesModule), canActivate: [authGuard] }
+ { path: 'mensajes', loadChildren: () => import('./mensajes/mensajes.module').then(m => m.MensajesModule), canActivate: [authGuard] },
+ { path: 'historial-de-pedidos', loadChildren: () => import('./historial-de-pedidos/historial-de-pedidos.module').then(m => m.HistorialDePedidosModule) } , // Redirecciona a 'home' cuando la ruta está vacía
 
 ];
 

@@ -19,7 +19,8 @@
                      
                      <p>Envío express: {{order.express_shipping ? 'Sí' : 'No'}}</p>
                      <p>Tipo Encomienda: {{order.tipo_encomienda}}</p>
-                     <p>Instrucciones:{{instrucciones}} </p>
+                     <p>Instrucciones: {{order.instrucciones}} </p>
+                     <p>Precio: {{order.price}}</p>
                   </div>
                   <div *ngIf="(order?.pickup_address == '')">
                       <p>Por favor seleccione un envío...</p>

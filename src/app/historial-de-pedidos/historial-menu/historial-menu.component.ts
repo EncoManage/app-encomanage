@@ -31,8 +31,13 @@ export class HistorialMenuComponent {
   }
   ngOnInit(): void {
     const index = +this.route.snapshot.paramMap.get('index')!;
-    this.order = this.orderService.getOrderDetails(index);
+    // this.order = this.orderService.getOrderDetails(index);
     this.order = this.orderService.getOrder();
+    this.orderService.getOrderDetails(index).subscribe((order: OrderRequest) => {
+      this.order = order;
+    }, error => {
+      console.error('Error al obtener detalles del pedido:', error);
+    });
   }
   getTheOrder():void{
     this.order = this.orderService.getOrder();

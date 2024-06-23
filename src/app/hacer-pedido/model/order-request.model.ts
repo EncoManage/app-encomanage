@@ -4,4 +4,5 @@ export interface OrderRequest{
     express_shipping: boolean;
     tipo_encomienda: string;
     price: number;
+    instrucciones: string;
 }

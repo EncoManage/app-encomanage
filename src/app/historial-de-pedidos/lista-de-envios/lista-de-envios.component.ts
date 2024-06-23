@@ -23,12 +23,15 @@ export class ListaDeEnviosComponent {
 
   constructor(private orderService: OrderService, private router: Router) { 
     this.order = this.orderService.getOrder();
-    this.orders = this.orderService.getOrderss();
-    this.instrucciones = this.orderService.getInstrucciones();
+    // this.orders = this.orderService.getOrderss();
+    // this.instrucciones = this.orderService.getInstrucciones();
   }
 
   ngOnInit(): void {
-    this.updateList();
+    // this.updateList();
+    this.orderService.getOrders().subscribe((orders: OrderRequest[]) => {
+      this.orders = orders;
+    });
   // this.orders = [
  //   {
    //     shipping_address: 'nenb',
@@ -48,14 +51,18 @@ export class ListaDeEnviosComponent {
       this.router.navigate(['/detalles-del-envio', index]);
     }
     updateList() :void{
-      this.orders = this.orderService.getOrderss();
+      // this.orders = this.orderService.getOrderss();
+      this.orderService.getOrders().subscribe((orders: OrderRequest[]) => {
+        this.orders = orders;
+      });
     }
     getOrdersCount(){
       return this.orders.length;
     }
     getCurrentOrderInstruction(currentOrderIndex: number): string {
       if (currentOrderIndex !== null && currentOrderIndex >= 0 && currentOrderIndex < this.instrucciones.length) {
-        return this.instrucciones[currentOrderIndex];
+        // return this.instrucciones[currentOrderIndex];
+          return this.orders[currentOrderIndex].instrucciones;
       }
       return '';
     }
