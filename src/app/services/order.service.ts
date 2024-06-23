@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:3000/orders';
+  private apiUrl = 'https://encomanage-api-fake.onrender.com/orders';
 
   private order: OrderRequest = {
     shipping_address: '',
