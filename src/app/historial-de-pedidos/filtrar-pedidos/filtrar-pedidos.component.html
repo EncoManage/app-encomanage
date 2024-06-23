@@ -1,0 +1,46 @@
+<body> 
+<div class="main-body">
+<!--Titulo e imagen-->
+    <div class="titulo-container">
+        <h1 class="titulo">Filtrar envíos</h1>
+        <img src="..\assets\logo.PNG" class="logo">
+    </div>
+<!--Texto Mensaje-->
+
+    <h1 class="mensaje-filtrar">Filtrar por:</h1>
+    
+<!--Tipos de encomienda-->
+    <div class="opciones-container">
+        <!--Opcion1-->
+        
+        <div class="pedido-boton1">
+            <button  class="pedido-contenedor1"(click)="sortAalaZ()">
+                
+                <img src="..\assets\calendario.png" class="pedido-img">
+                <div class="info-text-container">
+                    <h1 class="pedido-mensaje">Ordenar por nombre A-Z</h1>
+                    <h1 class="desc-1">Los ultimos envíos de la lista pasaran pasaran a ser los primeros y viceversa</h1>
+                </div>
+            </button>
+        </div>
+        <!--Opcion2-->
+        <div class="pedido-boton2">
+            <button class="pedido-contenedor2"  (click)="sortInvertirLista()">
+                <img src="..\assets\package.png" class="pedido-img">
+                <div class="info-text-container">
+                    <h1 class="pedido-mensaje">Invertir lista </h1>
+                    <h1 class="desc-1">Los ultimos envíos de la lista pasaran pasaran a ser los primeros y viceversa </h1>
+                </div>
+            </button>
+        </div>
+    </div>
+<!--Emoji Mensaje-->
+    <div class="emoji-container">
+        <img src="..\assets\nerd-face.png" class="foto-emoji">
+        <div class="mensaje-container">
+            <h1 class="mensaje1">Una vez selecciones una de estas opciones, el orden se actualizará en la lista de envíos.</h1>
+        </div>
+    </div>
+ 
+</div>
+</body>

@@ -1,0 +1,61 @@
+<body class="main-body">
+    <!--Titulo e imagen-->
+    <div class="titulo-container">
+        <h1 class="titulo">Lista de envíos</h1>
+        <img src="..\assets\logo.PNG" class="logo">
+    </div>
+    <!--Mensajes-->
+    <div class="mensaje-contador-container">
+        <h1 class="mensaje-total1">Total de envíos realizados: </h1>
+        <h1 class="mensaje-total2"> {{ orders.length }} </h1>
+       
+    </div>
+    <!--Contenedor de seleccion-->
+    <div class="contenedor-seleccionar">
+        <!--Mensaje seleccionar-->
+        <div>
+            <h1 class="mensaje-seleccionar">Seleccione un envío de la lista:</h1>
+        </div>
+        <!--Lista y continuar-->
+        <div class="contenedor-lista-cont">
+            <!--Lista-->
+            <div class="selec-pedido-container">
+                <div class="selec-pedido">
+                    <div *ngIf="(order && (order?.pickup_address != '') )">
+                     </div>
+                     <div *ngIf="(order?.pickup_address == '')">
+                         <p>Seleccione un envío dandole click. (Si no hay envíos, cree uno)</p>
+                     </div>
+                    <ul class="lista">
+                      <li *ngFor="let order of orders" (click)="onSelectOrder(order)">
+                        {{ order.pickup_address }}
+                      </li>
+                    </ul>
+                  
+                    <div class="mensajeA" *ngIf="selectedOrder" font color="green">
+                      <p>Usted selecciona </p> <p>: {{ selectedOrder.pickup_address }}</p>
+                      
+
+                    </div>
+                </div>
+            </div>
+            <!--Continuar-->
+                                                                         <!---(click)="irAlMenu()--->
+            <div class="botones">
+                <button mat-raised-button class="mensaje-update-container2" (click)="updateList()" >
+                    <h1 class="mensaje-update">ACTUALIZAR</h1>
+                </button>
+                <div class="separador">
+
+                </div>
+                 <button mat-raised-button class="mensaje-continuar-container" (click)="irAlMenu()" >
+                    <h1 class="mensaje-continuar">CONTINUAR</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- order-list.component.html -->
+    
+
+
+</body>

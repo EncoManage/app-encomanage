@@ -1,0 +1,68 @@
+<body>
+<div class="contenedor-principal">
+    <!--Izquierda-->
+    <div class="contenedor-izquierda">
+         <!--Titulo-->
+        <h1 class="titulo">Historial de pedidos</h1>
+        <!--Boton1-->
+        <div class="boton">
+                 <button class="boton-content" (click)="irFiltrarPedidos()">
+                     <img src="..\assets\filter.png"  class="foto-boton">
+                     <h1 class="boton-display-text1">Filtrar envíos</h1>
+                 </button>
+            <h1 class="boton-bottom-text">-Ordena la lista de envíos</h1>
+        </div>
+        <!--Boton2-->
+        <div class="boton">
+            <button class="boton-content" (click)="irDetallesDelEnvio()">
+                <img src="..\assets\detalle.png" class="foto-boton">
+                <h1 class="boton-display-text2">Detalles del envío</h1>
+            </button>
+            <h1 class="boton-bottom-text">-Mira los detalles del envío seleccionado</h1>
+        </div>
+        <!--Boton3-->
+        <div class="boton">
+            <button class="boton-content" (click)="irListaDeEnvios()">
+                <img src="..\assets\list.png" class="foto-boton">
+                <h1 class="boton-display-text3">Lista de todos los envíos</h1>
+            </button>
+            <h1 class="boton-bottom-text">-Selecciona un envío de la lista</h1>
+        </div>
+    </div>
+     <!--Dereccha-->
+    <div class="contenedor-derecha">
+        <!--Imagen-->
+        <div class="logo-container">
+            <img src="..\assets\logo.PNG" class="logo">
+        </div>  
+        <!--Mensaje-->
+        <div class="mensaje-container">
+            <h1 class="mensaje1">Envío Seleccionado</h1>
+        </div>
+        <!--Info-->
+        <div class="pedido-boton">
+            
+
+            <div class="pedido-contenedor" *ngIf="(order && (order?.pickup_address != '') )">
+                <img src="..\assets\package.png" class="pedido-img">
+                <div class="info-text-container">
+                    <h1 class="pedido-mensaje"> {{order.pickup_address}}</h1>
+                    <h1 class="desc-1"> Tipo de Encomienda: {{order.tipo_encomienda }}</h1>
+                    <h1 class="desc-1">Actualmente en: {{order.pickup_address}}</h1>
+                    <h1 class="desc-1">Tiempo estimado: 31 minutos</h1>
+                </div>
+            </div>
+            <div class="pedido-contenedor" *ngIf="(order?.shipping_address == '')">
+                <img src="..\assets\default.png" class="pedido-img">
+                <div class="info-text-container">
+                    <h1 class="pedido-mensaje">Por favor seleccione un envío...</h1>
+                    <h1 class="desc-1">Tipo de encomienda: ...</h1>
+                    <h1 class="desc-1">Actualmente en: ...</h1>
+                    <h1 class="desc-1">Tiempo estimado: ...</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

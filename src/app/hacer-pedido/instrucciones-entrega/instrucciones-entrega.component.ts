@@ -13,12 +13,16 @@ export class InstruccionesEntregaComponent {
  constructor(private orderService: OrderService,private router: Router) {
     this.instrucciones = this.orderService.getInstrucciones();
  }
-
+ 
  guardarInstrucciones() {
+  //añadir al arreglo
+  this.orderService.addInstruccion(this.instrucciones);
   console.log('Instrucciones guardadas:', this.instrucciones);
   // Guardar instrucciones en localStorage o algún servicio
   // localStorage.setItem('instrucciones', this.instrucciones);
   this.orderService.setInstrucciones(this.instrucciones);
   this.router.navigate(['/hacer-pedido/seleccionar-encomienda'])
+  
  }
+ 
 }

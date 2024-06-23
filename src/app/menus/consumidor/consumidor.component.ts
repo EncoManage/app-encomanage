@@ -25,10 +25,12 @@ export class ConsumidorComponent {
   }
 
   shipmentRecord(): void{
+
     this.router.navigate(['/hacer-pedido/create-order'])
   }
 
   notificaciones(): void{
     this.router.navigate(['/menus/notificaciones'])
+
   }
 }

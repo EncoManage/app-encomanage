@@ -1,0 +1,54 @@
+<body class="main-body">
+    <div class="titulo-container">
+        <h1 class="titulo">Detalles del envío</h1>
+        <div class="selec-imagen" *ngIf="(order && (order?.pickup_address != '') )">
+            <img src="..\assets\package.png" class="imagen">
+         </div>
+         <div class="selec-imagen" *ngIf="(order?.pickup_address == '')">
+            <img src="..\assets\default.png" class="imagen">
+         </div>
+        
+    </div>
+    <!--Descripcionn y localizacion-->
+    <div class="descripcion-localizacion-container">
+         <!--Descripcionn-->
+        <div class="descripcion-container"> 
+            <div class="descripcion-text">
+                  <h2>Detalles Completos:</h2>
+                 <div *ngIf="(order && (order?.pickup_address != '') )">
+                     
+                     <p>Envío express: {{order.express_shipping ? 'Sí' : 'No'}}</p>
+                     <p>Tipo Encomienda: {{order.tipo_encomienda}}</p>
+                     <p>Instrucciones:{{instrucciones}} </p>
+                  </div>
+                  <div *ngIf="(order?.pickup_address == '')">
+                      <p>Por favor seleccione un envío...</p>
+                  </div>
+             </div>
+        </div>
+        <!--Localizacion-->
+        <div class="localizacion-container"> 
+            <div class="direccion-recogida"> 
+                <h1 class="recogida-text">Dirección de recogida:</h1>
+                <div *ngIf="(order && (order?.pickup_address != '') )">
+                    <h1 class="recogida-output"> {{order.pickup_address}}</h1>
+                 </div>
+                 <div *ngIf="(order?.pickup_address == '')">
+                    <h1 class="recogida-output">Por favor seleccione un envío...</h1>
+               </div>
+                
+            </div>
+            <div class="direccion-entrega" > 
+                <h1 class="entrega-text">Dirección de entrega:</h1>
+                <div *ngIf="(order && (order?.pickup_address != '') )">
+                    <h1 class="recogida-output"> {{order.shipping_address}}</h1>
+                 </div>
+                 <div *ngIf="(order?.pickup_address == '')">
+                    <h1 class="recogida-output">Por favor seleccione un envío...</h1>
+                 </div>
+            </div>
+        </div>
+        
+    </div>
+   
+</body>

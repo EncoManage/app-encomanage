@@ -10,6 +10,7 @@ const routes: Routes = [
  { path: '', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
  { path: 'menus', loadChildren: () => import('./menus/menus.module').then(m => m.MenusModule), canActivate: [authGuard] },
  { path: 'mensajes', loadChildren: () => import('./mensajes/mensajes.module').then(m => m.MensajesModule), canActivate: [authGuard] }
+
 ];
 
 @NgModule({

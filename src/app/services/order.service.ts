@@ -7,7 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
+
   private apiUrl = 'http://localhost:3000/orders';
+
+  private orders: OrderRequest[] = [];
+  private instruccionesAr: string[] = [];
+
 
   private order: OrderRequest = {
     shipping_address: '',
@@ -16,11 +21,13 @@ export class OrderService {
     tipo_encomienda: '',
     price: 0
   };
+
   private instrucciones: string = '';
   private randomValue: number = Math.floor(Math.random() * 100) + 1;
 
   constructor(private http: HttpClient) {}
 
+  
   setOrder(order: OrderRequest) {
     this.order = order;
   }
@@ -36,6 +43,7 @@ export class OrderService {
   getInstrucciones(): string {
     return this.instrucciones;
   }
+
 
   getOrders(): Observable<OrderRequest[]> {
     return this.http.get<OrderRequest[]>(this.apiUrl);
@@ -70,5 +78,26 @@ export class OrderService {
 
   createOrder(order: OrderRequest): Observable<OrderRequest> {
     return this.http.post<OrderRequest>(this.apiUrl, order);
+  }
+ 
+  addOrder(order: OrderRequest) {
+    this.orders.push(order);
+  }
+  getOrderss(): OrderRequest[] {
+    return this.orders;
+  }
+  getInstruccionesAr(): string[]{
+    return this.instruccionesAr;
+  }
+  
+  getOrderDetails(index: number): OrderRequest | null {
+    return this.orders[index] || null;
+  }
+  getOrderCount(): number {
+    return this.orders.length;
+  }
+  addInstruccion(instruccion: string) {
+    this.instruccionesAr.push(instruccion);
+
   }
 }

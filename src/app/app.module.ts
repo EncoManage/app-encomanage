@@ -9,15 +9,17 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HacerPedidoModule } from './hacer-pedido/hacer-pedido.module';
+import { HistorialDePedidosModule } from './historial-de-pedidos/historial-de-pedidos.module';
 import { OrderService } from './services/order.service';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     HacerPedidoModule,
     FormsModule,
-    HttpClientModule
+
+    HttpClientModule,
+
+    HistorialDePedidosModule,
+
   ],
   providers: [
     provideAnimationsAsync(),
